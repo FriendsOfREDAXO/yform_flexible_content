@@ -1,0 +1,10 @@
+/vendor/
+/mix-manifest.json
+/yarn.lock
+/.php-cs-fixer.cache
+/vendor
+/.idea/
+/node_modules/
+/composer.lock
+/.php-cs-fixer.cache
+/vendor
