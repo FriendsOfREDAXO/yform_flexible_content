@@ -64,9 +64,6 @@ class rex_yform_value_flexible_content extends rex_yform_value_abstract
         $content->setVar('class', 'info');
         $content = $content->parse('yform_flexible_content/content.php');
 
-        $script = new rex_fragment();
-        $script = $script->parse('yform_flexible_content/script.php');
-
         return [
             'type' => 'value',
             'name' => 'flexible_content',
@@ -74,7 +71,6 @@ class rex_yform_value_flexible_content extends rex_yform_value_abstract
                 'name' => ['type' => 'name', 'label' => rex_i18n::msg('yform_values_defaults_name')],
                 'label' => ['type' => 'text', 'label' => rex_i18n::msg('yform_values_defaults_label')],
 
-                'script' => ['type' => 'html', 'html' => $script],
                 'start' => ['type' => 'html', 'html' => '<div id="flexible-content" x-data="flexibleContent" x-on:rexready.document="ready">'],
 
                 'flexible_fields' => ['type' => 'textarea', 'attributes' => ['class' => 'flexible-content-definition form-control hidden']],
