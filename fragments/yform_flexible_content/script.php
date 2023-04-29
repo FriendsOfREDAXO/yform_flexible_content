@@ -55,9 +55,8 @@
             label: 'Textarea',
           },
           {
-            type: 'image',
-            label: 'Image',
-            image: '',
+            type: 'media',
+            label: 'Media',
           },
           {
             type: 'link',

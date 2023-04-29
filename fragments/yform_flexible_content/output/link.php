@@ -1,8 +1,3 @@
-<?php
-//    $widget = rex_var_linklist::getWidget($buttonId, $name, $value, []);
-//    $widget = rex_var_link::getWidget($buttonId, $name, $value, []);
-?>
-
 <div class="w-full">
     <label class="control-label" :for="'REX_LINK_'+fieldId+'_NAME'" x-text="field.title"></label>
 
