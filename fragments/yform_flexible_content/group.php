@@ -22,7 +22,7 @@ $field = $field->parse('yform_flexible_content/field.php');
                            name="type">
                 </div>
                 <div class="pl-5">
-                    <button class="btn btn-danger h-[36px]"
+                    <button class="btn btn-danger"
                             @click.prevent="removeGroup(index)"
                             title="Gruppe löschen">
                         <i class="fa fa-trash"></i>
