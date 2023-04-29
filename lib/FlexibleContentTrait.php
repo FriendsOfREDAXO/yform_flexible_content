@@ -8,8 +8,17 @@ trait FlexibleContentTrait
         $contents = json_decode($this->getValue($columnName), true);
 
         foreach ($contents as $content) {
-            $fields = array_reduce($content['fields'], 'array_merge', []);
-            $data[] = array_intersect_key($fields, array_flip(['name', 'type', 'value']));
+            $group = [];
+
+            foreach ($content['fields'] as $key => $field) {
+                $group[] = [
+                    'name' => $field['name'],
+                    'type' => $field['type'],
+                    'value' => $field['value'] ?? null,
+                ];
+            }
+
+            $data[] = $group;
         }
 
         return $data;
