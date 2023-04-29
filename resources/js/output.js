@@ -76,16 +76,18 @@ window.flexibleOutput = (data) => {
       field.link = '';
       this.updateContent();
     },
+    move (from, to) {
+        this.groups.splice(to, 0, this.groups.splice(from, 1)[0]);
+        this.updateContent();
+    },
     moveUp (index) {
       if (index > 0) {
-        this.groups.splice(index - 1, 0, this.groups.splice(index, 1)[0]);
-        this.updateContent();
+        this.move(index - 1, index);
       }
     },
     moveDown (index) {
       if (index < this.groups.length - 1) {
-        this.groups.splice(index + 1, 0, this.groups.splice(index, 1)[0]);
-        this.updateContent();
+        this.move(index + 1, index);
       }
     }
   };
