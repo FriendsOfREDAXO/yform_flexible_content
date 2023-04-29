@@ -52,5 +52,5 @@ $attributes = $this->getAttributeElements($attributes, ['placeholder', 'pattern'
 
 echo '<div class="hidden ' . $class_group . '" id="' . $this->getHTMLId() . '">
 <label class="' . implode(' ', $class_label) . '" for="' . $this->getFieldId() . '">' . $this->getLabel() . '</label>
-<textarea ' . implode(' ', $attributes) . '>' . rex_escape($this->getValue()) . '</textarea>' . $notice .
-    '</div>';
+<textarea ' . implode(' ', $attributes) . '>' . rex_escape($this->getValue(true)) . '</textarea>' . $notice .
+'</div>';

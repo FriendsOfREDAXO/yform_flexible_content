@@ -9,12 +9,27 @@
 
 class rex_yform_value_flexible_content extends rex_yform_value_abstract
 {
+    public function getValue($raw = false)
+    {
+        if ($raw) {
+            return $this->value;
+        }
+
+        $value = json_decode($this->value, true);
+
+        if (is_array($value)) {
+            return $value;
+        }
+
+        return [];
+    }
+
     public function enterObject()
     {
-        $this->setValue((string) $this->getValue());
+        $this->setValue((string) $this->getValue(true));
 
         if ($this->saveInDb()) {
-            $this->params['value_pool']['sql'][$this->getName()] = $this->getValue();
+            $this->params['value_pool']['sql'][$this->getName()] = $this->getValue(true);
         }
 
         if ($this->needsOutput()) {
@@ -33,9 +48,8 @@ class rex_yform_value_flexible_content extends rex_yform_value_abstract
             }
         }
 
-        $this->params['value_pool']['email'][$this->getName()] = $this->getValue();
         if ($this->saveInDb()) {
-            $this->params['value_pool']['sql'][$this->getName()] = $this->getValue();
+            $this->params['value_pool']['sql'][$this->getName()] = $this->getValue(true);
         }
     }
 

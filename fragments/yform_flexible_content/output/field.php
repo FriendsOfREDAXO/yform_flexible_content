@@ -1,15 +1,15 @@
 <?php
-    $text = new rex_fragment();
-    $text = $text->parse('yform_flexible_content/output/text.php');
+$text = new rex_fragment();
+$text = $text->parse('yform_flexible_content/output/text.php');
 
-    $textArea = new rex_fragment();
-    $textArea = $textArea->parse('yform_flexible_content/output/textarea.php');
+$textArea = new rex_fragment();
+$textArea = $textArea->parse('yform_flexible_content/output/textarea.php');
 
-    $link = new rex_fragment();
-    $link = $link->parse('yform_flexible_content/output/link.php');
+$link = new rex_fragment();
+$link = $link->parse('yform_flexible_content/output/link.php');
 
-    $media = new rex_fragment();
-    $media = $media->parse('yform_flexible_content/output/media.php');
+$media = new rex_fragment();
+$media = $media->parse('yform_flexible_content/output/media.php');
 ?>
 
 <template x-for="(field, index) in group.fields">

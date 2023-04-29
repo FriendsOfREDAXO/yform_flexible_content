@@ -1,6 +1,6 @@
 <?php
-    $field = new rex_fragment();
-    $field = $field->parse('yform_flexible_content/output/field.php');
+$field = new rex_fragment();
+$field = $field->parse('yform_flexible_content/output/field.php');
 ?>
 
 <div class="my-5" x-cloak x-show="hasContent">

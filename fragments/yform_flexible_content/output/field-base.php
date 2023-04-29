@@ -1,5 +1,5 @@
 <?php
-    $content = $this->getVar('content');
+$content = $this->getVar('content');
 ?>
 
 <div class=""
