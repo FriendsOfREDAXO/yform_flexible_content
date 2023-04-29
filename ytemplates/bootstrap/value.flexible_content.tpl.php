@@ -7,7 +7,7 @@
 
 $flexibleFields = $this->getElement('flexible_fields');
 
-if ($flexibleFields && $flexibleFields !== '[]') {
+if ($flexibleFields && '[]' !== $flexibleFields) {
     $content = new rex_fragment();
     $content->setVar('fields', $flexibleFields);
     $content->setVar('contentId', $this->getFieldId());
@@ -21,9 +21,9 @@ if ('' != $this->getElement('notice')) {
 
 if (isset($this->params['warning_messages'][$this->getId()]) && !$this->params['hide_field_warning_messages']) {
     $notice[] = '<span class="text-warning">' . rex_i18n::translate(
-            $this->params['warning_messages'][$this->getId()],
-            false
-        ) . '</span>'; //    var_dump();
+        $this->params['warning_messages'][$this->getId()],
+        false,
+    ) . '</span>'; //    var_dump();
 }
 
 if (count($notice) > 0) {

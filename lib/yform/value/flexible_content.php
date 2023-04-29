@@ -17,23 +17,18 @@ class rex_yform_value_flexible_content extends rex_yform_value_abstract
             $this->params['value_pool']['sql'][$this->getName()] = $this->getValue();
         }
 
-        if ($this->needsOutput())
-        {
+        if ($this->needsOutput()) {
             $this->params['form_output'][$this->getId()] = $this->parse('value.flexible_content.tpl.php');
         }
 
-        if ($this->needsOutput() && $this->isViewable())
-        {
+        if ($this->needsOutput() && $this->isViewable()) {
             $templateParams = [];
-            if (!$this->isEditable())
-            {
+            if (!$this->isEditable()) {
                 $attributes = empty($this->getElement('attributes')) ? [] : json_decode($this->getElement('attributes'), true);
                 $attributes['readonly'] = 'readonly';
                 $this->setElement('attributes', json_encode($attributes));
                 $this->params['form_output'][$this->getId()] = $this->parse(['value.flexible_content.tpl.php'], $templateParams);
-            }
-            else
-            {
+            } else {
                 $this->params['form_output'][$this->getId()] = $this->parse('value.flexible_content.tpl.php', $templateParams);
             }
         }
@@ -54,7 +49,6 @@ class rex_yform_value_flexible_content extends rex_yform_value_abstract
         $content = new rex_fragment();
         $content->setVar('class', 'info');
         $content = $content->parse('yform_flexible_content/content.php');
-
 
         $script = new rex_fragment();
         $script = $script->parse('yform_flexible_content/script.php');
