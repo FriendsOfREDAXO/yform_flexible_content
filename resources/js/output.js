@@ -22,7 +22,15 @@ window.flexibleOutput = (data) => {
 
       this.isReady = true;
     },
+    uuid () {
+      return 'xxxxxxxxxxxxxxxx'.replace(/[x]/g, (c) => {
+        const r = (Math.random() * 16) | 0,
+          v = c === 'x' ? r : (r & 0x3) | 0x8;
+        return v.toString(16);
+      });
+    },
     addGroup (group) {
+      group.id = this.uuid();
       this.groups.push(JSON.parse(JSON.stringify(group)));
       this.updateContent();
     },
