@@ -8,7 +8,7 @@ $field = $field->parse('yform_flexible_content/field.php');
 
 <div class="my-5" x-cloak x-show="hasContent">
     <template x-for="(group, index) in groups" :key="group['id']">
-        <div class="my-5 px-5 py-4 bg-white bg-opacity-50">
+        <div class="my-5 px-5 py-4 panel panel-edit">
             <div class="flex form-group items-end">
                 <div class="w-full">
                     <label class="control-label" :for="'group-'+group.id+'name'">Group Name</label>
