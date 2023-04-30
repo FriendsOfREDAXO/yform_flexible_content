@@ -20,6 +20,7 @@
                                x-model="group.fields[index].name"
                                required
                                @keyup="updateContent()"
+                               @keydown.enter.prevent.stop="null"
                                @blur="updateContent()"
                                placeholder="field_name"
                                name="name">
@@ -33,6 +34,7 @@
                                x-model="group.fields[index].title"
                                required
                                @keyup="updateContent()"
+                               @keydown.enter.prevent.stop="null"
                                @blur="updateContent()"
                                placeholder="Field Title"
                                name="title">
@@ -57,6 +59,7 @@
                                :id="'attributes-'+group.id+index"
                                :value="field.attributes"
                                @keyup="updateContent()"
+                               @keydown.enter.prevent.stop="null"
                                @blur="updateContent()"
                                name="attributes">
                         <p class="help-block small">
@@ -72,6 +75,7 @@
                                max="100"
                                x-model="group.fields[index].width"
                                @keyup="updateContent()"
+                               @keydown.enter.prevent.stop="null"
                                @blur="updateContent()"
                                name="width">
                     </div>

@@ -9,6 +9,7 @@
            cols="30"
            rows="10"
            @keyup="updateContent()"
+           @keydown.enter.prevent.stop="null"
            @blur="updateContent()">
     </textarea>
 </div>

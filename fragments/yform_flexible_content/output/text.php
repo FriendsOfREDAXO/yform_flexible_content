@@ -7,6 +7,7 @@
            x-init="setAttributes(fieldDefinition.attributes, $el)"
            required
            @keyup="updateContent()"
+           @keydown.enter.prevent.stop="null"
            @blur="updateContent()"
            name="content">
 </div>

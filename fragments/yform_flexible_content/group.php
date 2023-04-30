@@ -17,6 +17,7 @@ $field = $field->parse('yform_flexible_content/field.php');
                            :id="'group-'+group.id+'name'"
                            x-model="group.name"
                            @keyup="updateContent()"
+                           @keydown.enter.prevent.stop="null"
                            @blur="updateContent()"
                            required
                            name="type">
