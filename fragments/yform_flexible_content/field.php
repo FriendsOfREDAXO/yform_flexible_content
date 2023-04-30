@@ -17,7 +17,7 @@
                         <input type="text"
                                class="form-control"
                                :id="group.id+index+'name'"
-                               x-model="group.fields[index].name"
+                               x-model="field.name"
                                required
                                @keyup="updateContent()"
                                @keydown.enter.prevent.stop="null"
@@ -31,7 +31,7 @@
                         <input type="text"
                                class="form-control"
                                :id="group.id+index+'title'"
-                               x-model="group.fields[index].title"
+                               x-model="field.title"
                                required
                                @keyup="updateContent()"
                                @keydown.enter.prevent.stop="null"
@@ -55,7 +55,7 @@
                         <label :for="'attributes-'+group.id+index">Attributes</label>
                         <input type="text"
                                class="form-control"
-                               x-model="group.fields[index].attributes"
+                               x-model="field.attributes"
                                :id="'attributes-'+group.id+index"
                                :value="field.attributes"
                                @keyup="updateContent()"
@@ -73,7 +73,7 @@
                                class="form-control"
                                :id="'group-'+group.id+index+'width'"
                                max="100"
-                               x-model="group.fields[index].width"
+                               x-model="field.width"
                                @keyup="updateContent()"
                                @keydown.enter.prevent.stop="null"
                                @blur="updateContent()"
