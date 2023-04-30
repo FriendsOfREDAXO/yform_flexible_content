@@ -2,17 +2,22 @@
 
 class FlexibleContent
 {
-    public static function stripFields(string $fields): string
+    public function __construct(array $fields)
     {
-        $fields = json_decode($fields, true);
-        foreach ($fields as &$field) {
-            unset($field['name']);
+        $this->fields = $fields;
+        dump($fields);
+        $this->type = $fields['type'];
+        $this->name = $fields['name'];
+        $this->value = isset($fields['value']) && $fields['value'] !== '' ? $fields['value'] : null;
+    }
 
-            foreach ($field['fields'] as &$subField) {
-                unset($subField['width'], $subField['attributes'], $subField['title'], $subField['label']);
-            }
-        }
+    public function getValue(): string|null
+    {
+        return $this->value;
+    }
 
-        return json_encode($fields);
+    public function getName(): string
+    {
+        return $this->name;
     }
 }

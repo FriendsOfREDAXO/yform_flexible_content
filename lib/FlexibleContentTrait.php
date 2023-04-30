@@ -10,12 +10,8 @@ trait FlexibleContentTrait
         foreach ($contents as $content) {
             $group = [];
 
-            foreach ($content['fields'] as $key => $field) {
-                $group[] = [
-                    'name' => $field['name'],
-                    'type' => $field['type'],
-                    'value' => $field['value'] ?? null,
-                ];
+            foreach ($content['fields'] as $field) {
+                $group[] = new FlexibleContent($field);
             }
 
             $data[] = $group;

@@ -1,7 +1,7 @@
 <?php
 $fields = $this->getVar('fields');
 $contentId = $this->getVar('contentId');
-$strippedFields = FlexibleContent::stripFields($fields);
+$strippedFields = FlexibleContentUtils::stripFields($fields);
 
 $addGroup = new rex_fragment();
 $addGroup = $addGroup->parse('yform_flexible_content/output/add-group.php');
