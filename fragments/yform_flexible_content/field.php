@@ -1,5 +1,5 @@
 <template x-for="(field, index) in group.fields">
-    <div class="py-4">
+    <div class="py-4 border-0">
         <template x-if="group.fields[index]">
             <div>
                 <input type="hidden"
