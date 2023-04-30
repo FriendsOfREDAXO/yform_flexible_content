@@ -1,5 +1,5 @@
 <div class="w-full">
-    <label class="control-label" :for="'REX_LINK_'+fieldId+'_NAME'" x-text="field.title"></label>
+    <label class="control-label" :for="'REX_LINK_'+fieldId+'_NAME'" x-text="getFieldTitle(group.id, field.name)"></label>
 
     <div class="input-group">
         <input class="form-control"

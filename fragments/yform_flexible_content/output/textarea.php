@@ -1,8 +1,8 @@
 <div class="w-full">
-    <label class="control-label" :for="'field-'+group.id+groupIndex+index" x-text="field.title"></label>
+    <label class="control-label" :for="fieldId" x-text="getFieldTitle(group.id, field.name)"></label>
     <textarea type="text"
            class="form-control"
-           :id="'field-'+group.id+groupIndex+index"
+           :id="fieldId"
            x-model="field.value"
            required
            cols="30"

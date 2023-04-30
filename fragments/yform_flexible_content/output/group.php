@@ -4,10 +4,10 @@ $field = $field->parse('yform_flexible_content/output/field.php');
 ?>
 
 <div class="my-5" x-cloak x-show="hasContent">
-    <template x-for="(group, groupIndex) in groups" :key="group.id">
+    <template x-for="(group, groupIndex) in groups" :key="group.groupId">
         <div class="my-5 px-5 py-4 panel panel-edit">
             <div class="flex form-group items-center justify-between">
-                <h3 x-text="group.name" class="mt-0 mb-0"></h3>
+                <h3 x-text="getGroupName(group.id)" class="mt-0 mb-0"></h3>
                 <div class="pl-5 flex space-x-2">
                     <button class="btn btn-default"
                             :disabled="groupIndex === 0"

@@ -5,7 +5,7 @@
     <ul class="dropdown-menu ">
         <template x-for="(group, index) in groupDefinitions">
             <li>
-                <a href="#" @click.prevent="addGroup(group)" x-text="group.name"></a>
+                <a href="#" @click.prevent="addGroup(group)" x-text="getGroupName(group.id)"></a>
             </li>
         </template>
     </ul>

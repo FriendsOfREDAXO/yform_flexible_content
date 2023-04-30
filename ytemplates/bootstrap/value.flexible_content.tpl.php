@@ -9,7 +9,7 @@ $flexibleFields = $this->getElement('flexible_fields');
 
 if ($flexibleFields && '[]' !== $flexibleFields) {
     $content = new rex_fragment();
-    $content->setVar('fields', $flexibleFields);
+    $content->setVar('fields', $flexibleFields, false);
     $content->setVar('contentId', $this->getFieldId());
     echo $content->parse('yform_flexible_content/output/content.php');
 }

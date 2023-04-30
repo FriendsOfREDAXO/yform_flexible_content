@@ -5,10 +5,11 @@ window.flexibleOutput = (data) => {
     hasContent: false,
     groups: [],
     groupDefinitions: data.groupDefinitions,
+    groupDetails: data.groupDetails,
     initialValue: [],
     contentString: '',
     ready () {
-      this.$content = document.getElementById(data.id);
+      this.$content = document.getElementById(data.contentId);
 
       if (this.$content.value) {
         this.hasContent = true;
@@ -30,9 +31,28 @@ window.flexibleOutput = (data) => {
       });
     },
     addGroup (group) {
-      group.id = this.uuid();
+      group.groupId = this.uuid();
       this.groups.push(JSON.parse(JSON.stringify(group)));
       this.updateContent();
+    },
+    getGroupDetailsById (id) {
+      return this.groupDetails.find((group) => group.id === id);
+    },
+    getGroupName (id) {
+      let group = this.getGroupDetailsById(id);
+      return group ? group.name : '';
+    },
+    getFieldDefinition(id, name) {
+      let group = this.getGroupDetailsById(id);
+      return group.fields.find((fieldDefinition) => fieldDefinition.name === name);
+    },
+    getFieldTitle (id, name) {
+      let fieldDefinition = this.getFieldDefinition(id, name);
+      return fieldDefinition ? fieldDefinition.title : '';
+    },
+    getFieldWitdth (id, name) {
+      let fieldDefinition = this.getFieldDefinition(id, name);
+      return fieldDefinition ? fieldDefinition.width : '';
     },
     removeGroup (index) {
       this.groups.splice(index, 1);
