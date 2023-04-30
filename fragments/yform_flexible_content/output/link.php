@@ -6,6 +6,7 @@
                type="text"
                value=""
                x-model="field.link"
+               x-init="setAttributes(fieldDefinition.attributes, $el)"
                :id="'REX_LINK_'+fieldId+'_NAME'"
                readonly="readonly">
 

@@ -46,6 +46,14 @@ window.flexibleOutput = (data) => {
       let group = this.getGroupDetailsById(id);
       return group.fields.find((fieldDefinition) => fieldDefinition.name === name);
     },
+    setAttributes (fieldAttributes, $element) {
+      if (!fieldAttributes || fieldAttributes === '') return;
+
+      const attributes = JSON.parse(fieldAttributes);
+      for (var attribute in attributes) {
+        $element.setAttribute(attribute, attributes[attribute]);
+      }
+    },
     removeGroup (index) {
       this.groups.splice(index, 1);
       this.updateContent();

@@ -4,6 +4,7 @@
            class="form-control"
            :id="fieldId"
            x-model="field.value"
+           x-init="setAttributes(fieldDefinition.attributes, $el)"
            required
            @keyup="updateContent()"
            @blur="updateContent()"

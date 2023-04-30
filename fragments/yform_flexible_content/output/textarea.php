@@ -4,6 +4,7 @@
            class="form-control"
            :id="fieldId"
            x-model="field.value"
+           x-init="setAttributes(fieldDefinition.attributes, $el)"
            required
            cols="30"
            rows="10"

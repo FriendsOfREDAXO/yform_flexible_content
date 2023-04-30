@@ -6,6 +6,7 @@
             <input class="form-control"
                    type="text"
                    value=""
+                   x-init="setAttributes(fieldDefinition.attributes, $el)"
                    x-model="field.value"
                    :id="'REX_MEDIA_'+fieldId"
                    readonly="">
