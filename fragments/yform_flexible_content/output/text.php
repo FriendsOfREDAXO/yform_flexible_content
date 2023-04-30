@@ -1,5 +1,5 @@
 <div class="w-full">
-    <label class="control-label" :for="fieldId" x-text="getFieldTitle(group.id, field.name)"></label>
+    <label class="control-label" :for="fieldId" x-text="fieldDefinition.title"></label>
     <input type="text"
            class="form-control"
            :id="fieldId"

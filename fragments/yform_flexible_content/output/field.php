@@ -14,8 +14,11 @@ $media = $media->parse('yform_flexible_content/output/media.php');
 
 <template x-for="(field, index) in group.fields">
     <div class="py-4 px-2"
-         x-data="{fieldId:'field-'+group.groupId+groupIndex+index}"
-         x-bind:style="getFieldWitdth(group.id, field.name) && { width: getFieldWitdth(group.id, field.name) + '%' }">
+         x-data="{
+                fieldId:'field-'+group.groupId+groupIndex+index,
+                fieldDefinition: getFieldDefinition(group.id, field.name),
+            }"
+         x-bind:style="fieldDefinition.width && { width: fieldDefinition.width + '%' }">
 
         <template x-if="field.type==='text'">
             <?= $text ?>

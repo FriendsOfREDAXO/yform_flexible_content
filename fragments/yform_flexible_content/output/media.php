@@ -1,5 +1,5 @@
 <div class="w-full">
-    <label class="control-label" :for="'REX_MEDIA_'+fieldId" x-text="getFieldTitle(group.id, field.name)"></label>
+    <label class="control-label" :for="'REX_MEDIA_'+fieldId" x-text="fieldDefinition.title"></label>
 
     <div class="rex-js-widget rex-js-widget-media">
         <div class="input-group">
