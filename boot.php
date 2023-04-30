@@ -12,18 +12,3 @@ if (rex::isBackend() && rex::getUser()) {
         rex_view::addCssFile($addon->getAssetsUrl('yform-flexible-content.css'));
     }
 }
-
-/**
- * @internal
- */
-class Test extends \rex_yform_manager_dataset
-{
-    use FlexibleContentTrait;
-}
-
-rex_yform_manager_dataset::setModelClass(
-    'rex_test',
-    Test::class,
-);
-
-//dump(Test::get(1)->getFlexibleContent('flex'));
