@@ -1,4 +1,4 @@
-<div class="w-full">
+<div class="w-full" x-data="flexibleMedia">
     <label class="control-label" :for="'REX_MEDIA_'+fieldId" x-text="fieldDefinition.title"></label>
 
     <div class="rex-js-widget rex-js-widget-media">

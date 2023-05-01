@@ -62,40 +62,6 @@ window.flexibleOutput = (data) => {
       this.contentString = JSON.stringify(this.groups);
       this.$content.value = this.contentString;
     },
-    addLink (id, field) {
-      let linkMap = openLinkMap(id);
-      $(linkMap).on('rex:selectLink', (event, id, name) => {
-        field.value = id.replace('redaxo://', '');
-        field.link = name;
-        this.updateContent();
-      });
-    },
-    removeLink (id, field) {
-      deleteREXLink(id);
-      field.value = '';
-      field.link = '';
-      this.updateContent();
-    },
-    openMedia (id, field) {
-      let mediaManager = openREXMedia(id);
-      $(mediaManager).on('rex:selectMedia', (event, filename) => {
-        field.value = filename;
-        this.updateContent();
-      });
-    },
-    addMedia (id, field) {
-      let mediaManager = addREXMedia(id);
-      $(mediaManager).on('rex:selectMedia', (event, filename) => {
-        field.value = filename;
-        this.updateContent();
-      });
-    },
-    removeMedia (id, field) {
-      deleteREXMedia(id);
-      field.value = '';
-      field.link = '';
-      this.updateContent();
-    },
     move (from, to) {
         this.groups.splice(to, 0, this.groups.splice(from, 1)[0]);
         this.updateContent();

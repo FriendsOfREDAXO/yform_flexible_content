@@ -1,4 +1,4 @@
-<div class="w-full">
+<div class="w-full" x-data="flexibleLink">
     <label class="control-label" :for="'REX_LINK_'+fieldId+'_NAME'" x-text="fieldDefinition.title"></label>
 
     <div class="input-group">
