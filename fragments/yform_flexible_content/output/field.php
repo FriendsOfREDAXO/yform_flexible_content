@@ -10,6 +10,9 @@ $link = $link->parse('yform_flexible_content/output/link.php');
 
 $media = new rex_fragment();
 $media = $media->parse('yform_flexible_content/output/media.php');
+
+$mediaList = new rex_fragment();
+$mediaList = $mediaList->parse('yform_flexible_content/output/media-list.php');
 ?>
 
 <template x-for="(field, index) in group.fields">
@@ -34,6 +37,10 @@ $media = $media->parse('yform_flexible_content/output/media.php');
 
         <template x-if="field.type==='media'">
             <?= $media ?>
+        </template>
+
+        <template x-if="field.type==='mediaList'">
+            <?= $mediaList ?>
         </template>
     </div>
 </template>

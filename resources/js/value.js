@@ -58,6 +58,10 @@ window.flexibleContent = () => {
           label: 'Media',
         },
         {
+          type: 'mediaList',
+          label: 'Media List',
+        },
+        {
           type: 'link',
           label: 'Link',
           link: '',

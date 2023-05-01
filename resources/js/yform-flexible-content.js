@@ -10,6 +10,7 @@ import './value.js';
 import './output.js';
 import './link.js';
 import './media.js';
+import './mediaList.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   Alpine.start();
