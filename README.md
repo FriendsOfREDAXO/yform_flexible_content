@@ -2,12 +2,12 @@
 
 Das Addon fügt flexible Inhalte für YForm hinzu. 
 Hierfür wird ein neues YForm Value (`flexible_content`) angeboten, über das beliebig viele Gruppen hinzugefügt werden können, die wiederum beliebig viele Felder verschiedener Typen enthalten können.
-Aktuell beschränkt sich das Addon auf die Feldtypen `text`, `textarea`, `link` und `media`.
+Aktuell beschränkt sich das Addon auf die Feldtypen `text`, `textarea`, `link`, `linkList`, `media` und `mediaList`.
 Die erstellten Gruppen können dann in YForm Datensätzen eingebunden werden.
 Inhalte werden als JSON gespeichert und können über ein Trait einfacher abgerufen werden.
 Das Trait entfernt unnötige Daten, die zum Speichern der Inhalte benötigt werden und gibt die Inhalte als Array zurück.
 
-### FlexibleContentTrait
+## FlexibleContentTrait
 
 Das Trait kann in eigene YForm Model-Klassen eingebunden werden. 
 Es fügt die Möglichkeit hinzu, die gespeicherten Inhalte einfacher abzurufen.
