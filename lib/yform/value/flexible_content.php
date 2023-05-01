@@ -80,7 +80,7 @@ class rex_yform_value_flexible_content extends rex_yform_value_abstract
 
                 'end' => ['type' => 'html', 'html' => '</div>'],
             ],
-            'description' => rex_i18n::msg('yform_values_flexible_content_description'),
+            'description' => rex_i18n::msg('yform_flexible_content_description'),
             'db_type' => ['text'],
             'search' => false,
             'list_hidden' => false,
