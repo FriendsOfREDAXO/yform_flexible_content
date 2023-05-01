@@ -65,6 +65,11 @@ window.flexibleContent = () => {
           type: 'link',
           label: 'Link',
           link: '',
+        },
+        {
+          type: 'linkList',
+          label: 'Link List',
+          link: '',
         }
       ];
 

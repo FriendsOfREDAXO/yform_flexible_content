@@ -9,6 +9,7 @@ window.Alpine = Alpine;
 import './value.js';
 import './output.js';
 import './link.js';
+import './linkList.js';
 import './media.js';
 import './mediaList.js';
 

@@ -8,6 +8,9 @@ $textArea = $textArea->parse('yform_flexible_content/output/textarea.php');
 $link = new rex_fragment();
 $link = $link->parse('yform_flexible_content/output/link.php');
 
+$linkList = new rex_fragment();
+$linkList = $linkList->parse('yform_flexible_content/output/link-list.php');
+
 $media = new rex_fragment();
 $media = $media->parse('yform_flexible_content/output/media.php');
 
@@ -33,6 +36,10 @@ $mediaList = $mediaList->parse('yform_flexible_content/output/media-list.php');
 
         <template x-if="field.type==='link'">
             <?= $link ?>
+        </template>
+
+        <template x-if="field.type==='linkList'">
+            <?= $linkList ?>
         </template>
 
         <template x-if="field.type==='media'">
