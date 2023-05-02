@@ -5,7 +5,6 @@ class FlexibleContent
     public function __construct(array $fields)
     {
         $this->fields = $fields;
-        dump($fields);
         $this->type = $fields['type'];
         $this->name = $fields['name'];
         $this->value = isset($fields['value']) && $fields['value'] !== '' ? $fields['value'] : null;
