@@ -1,5 +1,5 @@
 <template x-for="(field, index) in group.fields">
-    <div class="py-4 border-0">
+    <div class="py-6 border-0">
         <template x-if="group.fields[index]">
             <div>
                 <input type="hidden"
@@ -40,7 +40,7 @@
                                name="title">
                     </div>
 
-                    <div class="pl-5 pr-2 flex items-end justify-end">
+                    <div class="px-2 flex items-end justify-end">
                         <button class="btn btn-danger h-[36px]"
                                 @click.prevent="removeField(group, index)"
                                 title="Feld löschen">
@@ -62,7 +62,7 @@
                                @keydown.enter.prevent.stop="null"
                                @blur="updateContent()"
                                name="attributes">
-                        <p class="help-block small">
+                        <p class="help-block small mb-0">
                             {"class":"class-1 class-2", "data-name": "name"}
                         </p>
                     </div>
