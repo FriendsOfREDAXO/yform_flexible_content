@@ -25,4 +25,7 @@ $group = $group->parse('yform_flexible_content/output/group.php');
     <?= $group ?>
 
     <?= $addGroup ?>
+
+    <div id="flexible-drag-ghost" class="absolute overflow-hidden h-0 w-0 -left-[500vw] -top-[-500vh]"></div>
 </div>
+

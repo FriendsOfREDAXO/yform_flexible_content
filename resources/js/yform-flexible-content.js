@@ -12,6 +12,7 @@ import './link.js';
 import './linkList.js';
 import './media.js';
 import './mediaList.js';
+import './group.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   Alpine.start();
