@@ -8,6 +8,8 @@ requires:
     redaxo: ^5.14.0
     php:
         version: '>=8.0'
+    packages:
+        yform/manager: '^4.0.2'
 
 installer_ignore:
     - node_modules
