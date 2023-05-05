@@ -2,6 +2,7 @@ window.flexibleContent = () => {
   return {
     $content: document.querySelector('textarea.flexible-content-definition'),
     isReady: false,
+    showFlexibleContent: false,
     hasContent: false,
     fieldTypes: [],
     groups: [],
@@ -69,6 +70,21 @@ window.flexibleContent = () => {
         {
           type: 'linkList',
           label: 'Link List',
+          link: '',
+        },
+        {
+          type: 'select',
+          label: 'Select',
+          link: '',
+        },
+        {
+          type: 'radio',
+          label: 'Radio',
+          link: '',
+        },
+        {
+          type: 'checkbox',
+          label: 'Checkbox',
           link: '',
         }
       ];

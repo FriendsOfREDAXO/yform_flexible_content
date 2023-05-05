@@ -2,16 +2,28 @@
 
 class FlexibleContent
 {
-    public function __construct(array $fields)
+    public function __construct(array $field)
     {
-        $this->fields = $fields;
-        $this->type = $fields['type'];
-        $this->name = $fields['name'];
-        $this->value = isset($fields['value']) && $fields['value'] !== '' ? $fields['value'] : null;
+        $this->field = $field;
+        $this->type = $field['type'];
+        $this->name = $field['name'];
+        $this->value = isset($field['value']) && '' !== $field['value'] ? $field['value'] : null;
+        $this->setValue();
     }
 
-    public function getValue(): string|null
+    private function setValue(): void
     {
+        if (null !== $this->value && 'checkbox' === $this->type) {
+            $this->value = explode(',', $this->field['value']);
+        }
+    }
+
+    public function getValue(): string|array|null
+    {
+        if ('checkbox' === $this->type) {
+            return explode(',', $this->value);
+        }
+
         return $this->value;
     }
 

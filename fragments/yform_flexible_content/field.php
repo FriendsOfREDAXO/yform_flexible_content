@@ -49,6 +49,29 @@
                     </div>
                 </div>
 
+                <template x-if="field.type === 'select' || field.type === 'radio' || field.type === 'checkbox'">
+                    <div class="flex -mx-2 mt-4">
+                        <div class="w-full px-2">
+                            <label :for="'choices-'+group.id+index">Choices</label>
+                            <textarea class="form-control w-full resize-y"
+                                      x-model="field.choices"
+                                      :id="'choices-'+group.id+index"
+                                      :value="field.choices"
+                                      @keyup="updateContent()"
+                                      @blur="updateContent()"
+                                      name="choices"
+                                      rows="2">
+                            </textarea>
+                            <p class="help-block small mb-0">
+                                Enter each choice on a new line.
+                                <br>
+                                For more control, you may specify both a value and label like this:
+                                <code>value : Label</code> => <code>1 : First Choice</code>
+                            </p>
+                        </div>
+                    </div>
+                </template>
+
                 <div class="flex -mx-2 mt-4">
 
                     <div class="w-full md:w-8/12 px-2">
