@@ -1,16 +1,17 @@
 window.flexibleTextarea = ($textarea) => {
   return {
-    init () {
+    initTextarea () {
       this.setAttributes(this.fieldDefinition.attributes, $textarea)
-      this.initEditors();
+
+      // wait a tiny bit for x-model to be initialized
+      setTimeout(() => {
+        this.initEditors();
+      }, 50);
     },
     initEditors () {
       if ($textarea.classList.contains('cke5-editor')) {
         // need to pass a jQuery object to cke5_init... (╯°□°)╯︵ ┻━┻
-        setTimeout(() => {
-          cke5_init($($textarea));
-        }, 1);
-
+        cke5_init($($textarea));
         return;
       }
 
@@ -23,6 +24,23 @@ window.flexibleTextarea = ($textarea) => {
           this.updateContent();
         });
 
+        return;
+      }
+
+      // we need to initialize redactor manually...
+      if ($textarea.attributes.class.value.includes('redactor-editor--')) {
+        const className = [...$textarea.classList].filter((className) => className.startsWith('redactor-editor--'))[0];
+        const profileName = className.replace('redactor-editor--', '');
+        const options = redactor_profiles[profileName];
+        options.lang = redactorLang;
+        options.pasteImages = false;
+        options['callbacks'] = {
+          'blur': (e) => {
+            this.field.value = $textarea.value;
+            this.updateContent();
+          }
+        };
+        const redactor = $R('#' + this.fieldId, options);
         return;
       }
     },

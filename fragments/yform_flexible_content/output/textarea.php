@@ -3,6 +3,7 @@
     <textarea type="text"
            class="form-control"
            :id="fieldId"
+           x-init="initTextarea"
            x-attribute:id="idChanged($el)"
            x-ref="textarea"
            x-model="field.value"
