@@ -11,4 +11,5 @@
            @keyup="updateContent()"
            @blur="updateContent()">
     </textarea>
+    <div x-html="field.value"></div>
 </div>

@@ -13,6 +13,7 @@ $group = $group->parse('yform_flexible_content/output/group.php');
 <div class="form-group"
      id="flexible-content"
      x-data="flexibleOutput({
+        $element: $el,
         groupDefinitions: <?= rex_escape($strippedFields) ?>,
         groupDetails: <?= rex_escape($fields) ?>,
         contentId: '<?= $contentId ?>',

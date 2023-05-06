@@ -10,6 +10,20 @@ window.flexibleTextarea = ($textarea) => {
         setTimeout(() => {
           cke5_init($($textarea));
         }, 1);
+
+        return;
+      }
+
+      if ($textarea.attributes.class.value.includes('markitupEditor')) {
+        markitupInit();
+
+        // additional blur event listener to update the field value
+        $textarea.addEventListener('blur', () => {
+          this.field.value = $textarea.value;
+          this.updateContent();
+        });
+
+        return;
       }
     },
     idChanged ($element) {

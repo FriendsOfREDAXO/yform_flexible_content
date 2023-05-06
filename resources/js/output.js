@@ -1,6 +1,7 @@
 window.flexibleOutput = (data) => {
   return {
     $content: null,
+    $form: data.$element.closest('form'),
     isReady: false,
     hasContent: false,
     groups: [],
