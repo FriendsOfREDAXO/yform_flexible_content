@@ -1,10 +1,11 @@
-<div class="w-full">
+<div class="w-full" x-data="flexibleTextarea($refs.textarea)">
     <label class="control-label" :for="fieldId" x-text="fieldDefinition.title"></label>
     <textarea type="text"
            class="form-control"
            :id="fieldId"
+           x-attribute:id="idChanged($el)"
+           x-ref="textarea"
            x-model="field.value"
-           x-init="setAttributes(fieldDefinition.attributes, $el)"
            cols="30"
            rows="10"
            @keyup="updateContent()"
