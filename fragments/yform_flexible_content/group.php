@@ -31,7 +31,7 @@ $field = $field->parse('yform_flexible_content/field.php');
                 </div>
             </div>
 
-            <div class="divide-y divide-solid divide-gray-400 pt-4">
+            <div>
                 <?= $field ?>
             </div>
 
