@@ -56,5 +56,9 @@ $choice = $choice->parse('yform_flexible_content/output/choice.php');
         <template x-if="field.type==='select'||field.type==='checkbox'||field.type==='radio'">
             <?= $choice ?>
         </template>
+
+        <template x-if="fieldDefinition.notice">
+            <p class="help-block small mb-0" x-html="fieldDefinition.notice"></p>
+        </template>
     </div>
 </template>

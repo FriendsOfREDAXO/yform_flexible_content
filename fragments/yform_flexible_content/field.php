@@ -103,6 +103,22 @@
                                name="width">
                     </div>
                 </div>
+
+                <div class="flex -mx-2 mt-4">
+                    <!-- notice -->
+                    <div class="w-full px-2">
+                        <label class="control-label" :for="'group-'+group.id+index+'notice'">Notice</label>
+                        <input type="text"
+                               class="form-control"
+                               :id="'group-'+group.id+index+'notice'"
+                               max="100"
+                               x-model="field.notice"
+                               @keyup="updateContent()"
+                               @keydown.enter.prevent.stop="null"
+                               @blur="updateContent()"
+                               name="notice">
+                    </div>
+                </div>
             </div>
         </template>
     </div>
