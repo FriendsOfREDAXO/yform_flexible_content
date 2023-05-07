@@ -22,19 +22,21 @@
         <div>
             <p class="control-label font-bold" x-text="fieldDefinition.title"></p>
 
-            <template x-for="(choice, index) in choices" :key="index">
-                <div class="radio">
-                    <label>
-                        <input type="radio"
-                               :name="fieldId+'-radio'"
-                               @change="updateContent()"
-                               x-init="setAttributes(fieldDefinition.attributes, $el);"
-                               x-model="field.value"
-                               :value="choice.value">
-                        <span x-text="choice.label"></span>
-                    </label>
-                </div>
-            </template>
+            <div :class="{ 'flex flex-wrap space-x-4 -mt-2 -mx-2': fieldDefinition.inline }">
+                <template x-for="(choice, index) in choices" :key="index">
+                    <div class="radio" :class="{ 'mt-2': fieldDefinition.inline }">
+                        <label>
+                            <input type="radio"
+                                   :name="fieldId+'-radio'"
+                                   @change="updateContent()"
+                                   x-init="setAttributes(fieldDefinition.attributes, $el);"
+                                   x-model="field.value"
+                                   :value="choice.value">
+                            <span x-text="choice.label"></span>
+                        </label>
+                    </div>
+                </template>
+            </div>
         </div>
     </template>
 
@@ -42,18 +44,20 @@
         <div x-init="initCheckbox()">
             <p class="control-label font-bold" x-text="fieldDefinition.title"></p>
 
-            <template x-for="(choice, index) in choices" :key="index">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"
-                               @change="updateContent()"
-                               x-init="setAttributes(fieldDefinition.attributes, $el);"
-                               x-model="checkboxes"
-                               :value="choice.value">
-                        <span x-text="choice.label"></span>
-                    </label>
-                </div>
-            </template>
+            <div :class="{ 'flex flex-wrap space-x-4 -mt-2 -mx-2': fieldDefinition.inline }">
+                <template x-for="(choice, index) in choices" :key="index">
+                    <div class="checkbox" :class="{ 'mt-2': fieldDefinition.inline }">
+                        <label>
+                            <input type="checkbox"
+                                   @change="updateContent()"
+                                   x-init="setAttributes(fieldDefinition.attributes, $el);"
+                                   x-model="checkboxes"
+                                   :value="choice.value">
+                            <span x-text="choice.label"></span>
+                        </label>
+                    </div>
+                </template>
+            </div>
         </div>
     </template>
 

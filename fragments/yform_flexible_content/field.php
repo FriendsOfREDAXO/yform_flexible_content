@@ -69,6 +69,23 @@
                                 <code>value : Label</code> => <code>1 : First Choice</code>
                             </p>
                         </div>
+
+                        <template x-if="field.type !== 'select'">
+                            <div class="w-auto px-2">
+                                <label :for="group.id+index+'inline'">Inline</label>
+                                <br>
+                                <input type="checkbox"
+                                       :id="group.id+index+'inline'"
+                                       value="1"
+                                       name="inline"
+                                       x-model="field.inline"
+                                       @change="updateContent()">
+                                <i class="form-helper"></i>
+                                <p class="help-block small mb-0 whitespace-nowrap">
+                                    Show choices inline?
+                                </p>
+                            </div>
+                        </template>
                     </div>
                 </template>
 
