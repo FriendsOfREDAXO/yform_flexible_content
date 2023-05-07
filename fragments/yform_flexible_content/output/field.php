@@ -25,7 +25,7 @@ $sql = $sql->parse('yform_flexible_content/output/sql.php');
 ?>
 
 <template x-for="(field, index) in group.fields">
-    <div class="py-4 px-2"
+    <div class="my-4 px-2"
          x-data="{
                 fieldId:'field-'+group.groupId+groupIndex+index,
                 fieldDefinition: getFieldDefinition(group.id, field.name),

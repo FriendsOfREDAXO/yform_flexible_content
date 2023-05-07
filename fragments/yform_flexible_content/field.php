@@ -7,9 +7,6 @@
                        :value="field.type"
                        name="type">
 
-                <p class="help-block small m-0">
-
-                </p>
                 <header class="panel-heading px-5">
                     <div class="panel-title">
                         Field Type: <strong x-text="field.label"></strong>
