@@ -75,17 +75,19 @@ window.flexibleContent = () => {
         {
           type: 'select',
           label: 'Select',
-          link: '',
         },
         {
           type: 'radio',
           label: 'Radio',
-          link: '',
         },
         {
           type: 'checkbox',
           label: 'Checkbox',
-          link: '',
+        },
+        {
+          type: 'sql',
+          label: 'SQL-Select',
+          query: '',
         }
       ];
 
@@ -97,6 +99,7 @@ window.flexibleContent = () => {
           name: '',
           width: 100,
           attributes: '',
+          notice: '',
           value: '',
         });
       });

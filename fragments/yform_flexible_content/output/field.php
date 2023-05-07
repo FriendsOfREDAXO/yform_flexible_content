@@ -19,6 +19,9 @@ $mediaList = $mediaList->parse('yform_flexible_content/output/media-list.php');
 
 $choice = new rex_fragment();
 $choice = $choice->parse('yform_flexible_content/output/choice.php');
+
+$sql = new rex_fragment();
+$sql = $sql->parse('yform_flexible_content/output/sql.php');
 ?>
 
 <template x-for="(field, index) in group.fields">
@@ -55,6 +58,10 @@ $choice = $choice->parse('yform_flexible_content/output/choice.php');
 
         <template x-if="field.type==='select'||field.type==='checkbox'||field.type==='radio'">
             <?= $choice ?>
+        </template>
+
+        <template x-if="field.type==='sql'">
+            <?= $sql ?>
         </template>
 
         <template x-if="fieldDefinition.notice">

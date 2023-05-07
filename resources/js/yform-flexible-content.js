@@ -15,6 +15,7 @@ import './media.js';
 import './mediaList.js';
 import './choice.js';
 import './textarea.js';
+import './sql.js';
 import './group.js';
 
 document.addEventListener("DOMContentLoaded", () => {

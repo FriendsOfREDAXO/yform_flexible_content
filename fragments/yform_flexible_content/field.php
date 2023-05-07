@@ -49,13 +49,14 @@
                     </div>
                 </div>
 
+                <!-- choices -->
                 <template x-if="field.type === 'select' || field.type === 'radio' || field.type === 'checkbox'">
                     <div class="flex -mx-2 mt-4">
                         <div class="w-full px-2">
-                            <label :for="'choices-'+group.id+index">Choices</label>
+                            <label :for="group.id+index+'choices'">Choices</label>
                             <textarea class="form-control w-full resize-y"
                                       x-model="field.choices"
-                                      :id="'choices-'+group.id+index"
+                                      :id="group.id+index+'choices'"
                                       :value="field.choices"
                                       @keyup="updateContent()"
                                       @blur="updateContent()"
@@ -89,14 +90,36 @@
                     </div>
                 </template>
 
+                <!-- sql select -->
+                <template x-if="field.type === 'sql'">
+                    <div class="flex -mx-2 mt-4">
+                        <div class="w-full px-2">
+                            <label :for="group.id+index+'query'">Query</label>
+                            <input type="text"
+                                   class="form-control"
+                                   :id="group.id+index+'query'"
+                                   x-model="field.query"
+                                   required
+                                   @keyup="updateContent()"
+                                   @keydown.enter.prevent.stop="null"
+                                   @blur="updateContent()"
+                                   placeholder="SELECT id, name FROM table"
+                                   name="query">
+                            <p class="help-block small mb-0">
+                                <code>SELECT id AS value, name AS label FROM country</code>
+                            </p>
+                        </div>
+                    </div>
+                </template>
+
                 <div class="flex -mx-2 mt-4">
 
                     <div class="w-full md:w-8/12 px-2">
-                        <label :for="'attributes-'+group.id+index">Attributes</label>
+                        <label :for="group.id+index+'attributes'">Attributes</label>
                         <input type="text"
                                class="form-control"
                                x-model="field.attributes"
-                               :id="'attributes-'+group.id+index"
+                               :id="group.id+index+'attributes'"
                                :value="field.attributes"
                                @keyup="updateContent()"
                                @keydown.enter.prevent.stop="null"
@@ -108,10 +131,10 @@
                     </div>
 
                     <div class="w-full md:w-4/12 px-2">
-                        <label class="control-label" :for="'group-'+group.id+index+'width'">Width</label>
+                        <label class="control-label" :for="group.id+index+'width'">Width</label>
                         <input type="number"
                                class="form-control"
-                               :id="'group-'+group.id+index+'width'"
+                               :id="group.id+index+'width'"
                                max="100"
                                x-model="field.width"
                                @keyup="updateContent()"
@@ -121,13 +144,13 @@
                     </div>
                 </div>
 
+                <!-- notice -->
                 <div class="flex -mx-2 mt-4">
-                    <!-- notice -->
                     <div class="w-full px-2">
-                        <label class="control-label" :for="'group-'+group.id+index+'notice'">Notice</label>
+                        <label class="control-label" :for="group.id+index+'notice'">Notice</label>
                         <input type="text"
                                class="form-control"
-                               :id="'group-'+group.id+index+'notice'"
+                               :id="group.id+index+'notice'"
                                max="100"
                                x-model="field.notice"
                                @keyup="updateContent()"
