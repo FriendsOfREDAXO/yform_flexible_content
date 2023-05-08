@@ -1,5 +1,7 @@
 # YForm flexible content
 
+## :construction: Das Addon befindet sich noch in der Entwicklung und ist noch nicht für den produktiven Einsatz geeignet.
+
 Das Addon fügt flexible Inhalte für YForm hinzu. 
 Hierfür wird ein neues YForm Value (`flexible_content`) angeboten, über das beliebig viele Gruppen hinzugefügt werden können, die wiederum beliebig viele Felder verschiedener Typen enthalten können.
 
