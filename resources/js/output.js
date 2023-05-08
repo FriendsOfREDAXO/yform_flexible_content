@@ -56,6 +56,9 @@ window.flexibleOutput = (data) => {
       }
     },
     removeGroup (index) {
+      const groupName = this.getGroupName(this.groups[index].id);
+      if (!confirm('Gruppe "' + groupName + '" wirklich löschen?')) return;
+
       this.groups.splice(index, 1);
       this.updateContent();
     },
