@@ -8,7 +8,7 @@ $group = $group->parse('yform_flexible_content/group.php');
 
 <div class="form-group">
     <p class="control-label">
-        <strong>Flexible Content</strong>
+        <strong><?= rex_i18n::msg('yform_flexible_content_name') ?></strong>
     </p>
 
     <?= $group ?>

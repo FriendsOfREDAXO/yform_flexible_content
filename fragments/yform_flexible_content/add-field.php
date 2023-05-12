@@ -1,6 +1,6 @@
 <div class="dropdown" x-show="fieldTypes.length">
     <button class="btn btn-primary" type="button" data-toggle="dropdown">
-        <i class="fa fa-plus" aria-hidden="true"></i> Add field
+        <i class="fa fa-plus" aria-hidden="true"></i> <?= rex_i18n::msg('yform_flexible_content_add_field') ?>
     </button>
     <ul class="dropdown-menu ">
         <template x-for="(field, index) in fieldTypes">

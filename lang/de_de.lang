@@ -1,1 +1,16 @@
+yform_flexible_content_name = Flexibler Inhalt
 yform_flexible_content_description = Fügt flexible Inhaltsblöcke hinzu, die beliebig oft wiederholt werden können.
+yform_flexible_content_add_group = Gruppe hinzufügen
+yform_flexible_content_add_field = Feld hinzufügen
+yform_flexible_content_group_name = Gruppenname
+yform_flexible_content_field_type = Feldtyp
+yform_flexible_content_field_name = Feldname
+yform_flexible_content_field_title = Feldtitel
+yform_flexible_content_field_attributes = Attribute
+yform_flexible_content_field_width = Breite in Prozent
+yform_flexible_content_field_notice = Hinweis
+yform_flexible_content_delete_group = Gruppe löschen
+yform_flexible_content_delete_field = Feld löschen
+yform_flexible_content_choices = Auswahlmöglichkeiten
+yform_flexible_content_show_choices_inline = Auswahlmöglichkeiten in einer Zeile anzeigen?
+yform_flexible_content_choices_hint = Gib jede Auswahlmöglichkeit in einer neuen Zeile ein.<br>Um mehr Kontrolle zu haben, kannst du sowohl einen Wert als auch einen Label angeben, z.B.: <code>value : Label</code> => <code>1 : Erste Auswahl</code>

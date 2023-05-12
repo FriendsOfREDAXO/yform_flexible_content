@@ -19,13 +19,13 @@
             <a href="#"
                class="btn btn-popup"
                @click.prevent="addLink('REX_LINK_'+fieldId, field)"
-               title="Link auswählen">
+               title="<?= rex_i18n::msg('var_link_open') ?>">
                 <i class="rex-icon rex-icon-open-linkmap"></i>
             </a>
             <a href="#"
                class="btn btn-popup"
                @click.prevent="removeLink(fieldId, field)"
-               title="Ausgewählten Link löschen">
+               title="<?= rex_i18n::msg('var_link_delete') ?>">
                 <i class="rex-icon rex-icon-delete-link"></i>
             </a>
         </span>

@@ -1,6 +1,6 @@
 <div class="dropdown" x-show="groupDefinitions.length">
     <button class="btn btn-primary" type="button" data-toggle="dropdown">
-        <i class="fa fa-plus" aria-hidden="true"></i> Add Group
+        <i class="fa fa-plus" aria-hidden="true"></i> <?= rex_i18n::msg('yform_flexible_content_add_group') ?>
     </button>
     <ul class="dropdown-menu ">
         <template x-for="(group, index) in groupDefinitions">

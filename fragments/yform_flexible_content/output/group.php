@@ -39,17 +39,19 @@ $dropzone = $dropzone->setVar('last', false);
                             <div class="pl-5 flex space-x-2">
                                 <button class="btn btn-default"
                                         :disabled="groupIndex === 0"
+                                        title="<?= rex_i18n::msg('move_slice_up') ?>"
                                         @click.prevent="moveUp(groupIndex)">
                                     <i class="fa fa-chevron-up"></i>
                                 </button>
                                 <button class="btn btn-default"
                                         :disabled="groupIndex === groups.length - 1"
+                                        title="<?= rex_i18n::msg('move_slice_down') ?>"
                                         @click.prevent="moveDown(groupIndex)">
                                     <i class="fa fa-chevron-down"></i>
                                 </button>
                                 <button class="btn btn-danger"
                                         @click.prevent="removeGroup(groupIndex)"
-                                        title="Gruppe löschen">
+                                        title="<?= rex_i18n::msg('yform_flexible_content_delete_group') ?>">
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </div>

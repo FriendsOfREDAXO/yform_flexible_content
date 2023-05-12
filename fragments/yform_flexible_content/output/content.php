@@ -20,7 +20,7 @@ $group = $group->parse('yform_flexible_content/output/group.php');
         })"
      x-on:rexready.document="ready">
     <p class="control-label">
-        <strong>Flexible Content</strong>
+        <strong><?= rex_i18n::msg('yform_flexible_content_name') ?></strong>
     </p>
 
     <?= $group ?>

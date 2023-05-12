@@ -9,7 +9,7 @@
 
                 <header class="panel-heading px-5">
                     <div class="panel-title">
-                        Field Type: <strong x-text="field.label"></strong>
+                        <?= rex_i18n::msg('yform_flexible_content_field_type') ?>: <strong x-text="field.label"></strong>
                     </div>
                 </header>
 
@@ -17,7 +17,7 @@
 
                     <div class="flex -mx-2">
                         <div class="flex-1 px-2">
-                            <label class="control-label" :for="group.id+index+'name'">Field Name</label>
+                            <label class="control-label" :for="group.id+index+'name'"><?= rex_i18n::msg('yform_flexible_content_field_name') ?></label>
                             <input type="text"
                                    class="form-control"
                                    :id="group.id+index+'name'"
@@ -31,7 +31,7 @@
                         </div>
 
                         <div class="flex-1 px-2">
-                            <label class="control-label" :for="group.id+index+'title'">Field Title</label>
+                            <label class="control-label" :for="group.id+index+'title'"><?= rex_i18n::msg('yform_flexible_content_field_title') ?></label>
                             <input type="text"
                                    class="form-control"
                                    :id="group.id+index+'title'"
@@ -47,7 +47,7 @@
                         <div class="px-2 flex items-end justify-end">
                             <button class="btn btn-danger h-[36px]"
                                     @click.prevent="removeField(group, index)"
-                                    title="Feld löschen">
+                                    title="<?= rex_i18n::msg('yform_flexible_content_delete_field') ?>">
                                 <i class="fa fa-trash"></i>
                             </button>
                         </div>
@@ -57,7 +57,7 @@
                     <template x-if="field.type === 'select' || field.type === 'radio' || field.type === 'checkbox'">
                         <div class="flex -mx-2 mt-4">
                             <div class="w-full px-2">
-                                <label :for="group.id+index+'choices'">Choices</label>
+                                <label :for="group.id+index+'choices'"><?= rex_i18n::msg('yform_flexible_content_choices') ?></label>
                                 <textarea class="form-control w-full resize-y"
                                           x-model="field.choices"
                                           :id="group.id+index+'choices'"
@@ -68,10 +68,7 @@
                                           rows="2">
                                 </textarea>
                                 <p class="help-block small mb-0">
-                                    Enter each choice on a new line.
-                                    <br>
-                                    For more control, you may specify both a value and label like this:
-                                    <code>value : Label</code> => <code>1 : First Choice</code>
+                                    <?= rex_i18n::msg('yform_flexible_content_choices_hint') ?>
                                 </p>
                             </div>
 
@@ -87,7 +84,7 @@
                                            @change="updateContent()">
                                     <i class="form-helper"></i>
                                     <p class="help-block small mb-0 whitespace-nowrap">
-                                        Show choices inline?
+                                        <?= rex_i18n::msg('yform_flexible_content_show_choices_inline') ?>
                                     </p>
                                 </div>
                             </template>
@@ -119,7 +116,7 @@
                     <div class="flex -mx-2 mt-4">
 
                         <div class="w-full md:w-8/12 px-2">
-                            <label :for="group.id+index+'attributes'">Attributes</label>
+                            <label :for="group.id+index+'attributes'"><?= rex_i18n::msg('yform_flexible_content_field_attributes') ?></label>
                             <input type="text"
                                    class="form-control"
                                    x-model="field.attributes"
@@ -135,7 +132,7 @@
                         </div>
 
                         <div class="w-full md:w-4/12 px-2">
-                            <label class="control-label" :for="group.id+index+'width'">Width</label>
+                            <label class="control-label" :for="group.id+index+'width'"><?= rex_i18n::msg('yform_flexible_content_field_width') ?></label>
                             <input type="number"
                                    class="form-control"
                                    :id="group.id+index+'width'"
@@ -151,7 +148,7 @@
                     <!-- notice -->
                     <div class="flex -mx-2 mt-4">
                         <div class="w-full px-2">
-                            <label class="control-label" :for="group.id+index+'notice'">Notice</label>
+                            <label class="control-label" :for="group.id+index+'notice'"><?= rex_i18n::msg('yform_flexible_content_field_notice') ?></label>
                             <input type="text"
                                    class="form-control"
                                    :id="group.id+index+'notice'"
