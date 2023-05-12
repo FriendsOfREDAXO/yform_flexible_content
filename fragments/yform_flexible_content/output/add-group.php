@@ -2,6 +2,9 @@
     <button type="button"
             <?php if ($this->getVar('between_groups')) : ?>
                 class="btn btn-primary btn-sm opacity-0 focus:opacity-100 group-hover:opacity-100 transition-all"
+                :class="{
+                    'opacity-30': debug,
+                 }"
             <?php else: ?>
                 class="btn btn-primary"
             <?php endif; ?>

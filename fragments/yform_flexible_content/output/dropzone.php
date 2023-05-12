@@ -3,7 +3,11 @@
 ?>
 
 <div x-data="{dragging: false, over: false, hidden:false, currentIndex:groupIndex}"
-     class="relative"
+     <?php if (!$isLast): ?>
+     class="relative top-2"
+     <?php else: ?>
+     class="relative -top-2"
+     <?php endif; ?>
      :class="{
         'pointer-events-none': hidden,
      }"
@@ -26,6 +30,7 @@
          :class="{
             'scale-y-[50]': dragging,
             'cursor-pointer': dragging,
+            'bg-[fuchsia] opacity-30': debug,
          }">
     </div>
 

@@ -1,5 +1,6 @@
 window.flexibleOutput = (data) => {
   return {
+    debug: false,
     $content: null,
     $form: data.$element.closest('form'),
     isReady: false,
@@ -20,6 +21,14 @@ window.flexibleOutput = (data) => {
 
       this.$watch('contentString', (value) => {
         this.hasContent = value && value !== '[]';
+      });
+
+      this.$watch('debug', (isDebug) => {
+        if (isDebug) {
+          this.$content.parentNode.classList.remove('hidden');
+        } else {
+          this.$content.parentNode.classList.add('hidden');
+        }
       });
 
       this.isReady = true;
