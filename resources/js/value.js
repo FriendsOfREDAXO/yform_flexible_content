@@ -88,6 +88,10 @@ window.flexibleContent = () => {
           type: 'sql',
           label: 'SQL-Select',
           query: '',
+        },
+        {
+          type: 'heading',
+          label: 'Heading',
         }
       ];
 

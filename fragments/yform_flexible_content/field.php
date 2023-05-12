@@ -16,19 +16,21 @@
                 <div class="p-5">
 
                     <div class="flex -mx-2">
-                        <div class="flex-1 px-2">
-                            <label class="control-label" :for="group.id+index+'name'"><?= rex_i18n::msg('yform_flexible_content_field_name') ?></label>
-                            <input type="text"
-                                   class="form-control"
-                                   :id="group.id+index+'name'"
-                                   x-model="field.name"
-                                   required
-                                   @keyup="updateContent()"
-                                   @keydown.enter.prevent.stop="null"
-                                   @blur="updateContent()"
-                                   placeholder="field_name"
-                                   name="name">
-                        </div>
+                        <template x-if="field.type !== 'heading'">
+                            <div class="flex-1 px-2">
+                                <label class="control-label" :for="group.id+index+'name'"><?= rex_i18n::msg('yform_flexible_content_field_name') ?></label>
+                                <input type="text"
+                                       class="form-control"
+                                       :id="group.id+index+'name'"
+                                       x-model="field.name"
+                                       required
+                                       @keyup="updateContent()"
+                                       @keydown.enter.prevent.stop="null"
+                                       @blur="updateContent()"
+                                       placeholder="field_name"
+                                       name="name">
+                            </div>
+                        </template>
 
                         <div class="flex-1 px-2">
                             <label class="control-label" :for="group.id+index+'title'"><?= rex_i18n::msg('yform_flexible_content_field_title') ?></label>
@@ -113,37 +115,39 @@
                         </div>
                     </template>
 
-                    <div class="flex -mx-2 mt-4">
+                    <template x-if="field.type !== 'heading'">
+                        <div class="flex -mx-2 mt-4">
 
-                        <div class="w-full md:w-8/12 px-2">
-                            <label :for="group.id+index+'attributes'"><?= rex_i18n::msg('yform_flexible_content_field_attributes') ?></label>
-                            <input type="text"
-                                   class="form-control"
-                                   x-model="field.attributes"
-                                   :id="group.id+index+'attributes'"
-                                   :value="field.attributes"
-                                   @keyup="updateContent()"
-                                   @keydown.enter.prevent.stop="null"
-                                   @blur="updateContent()"
-                                   name="attributes">
-                            <p class="help-block small mb-0">
-                                {"class":"class-1 class-2", "data-name": "name"}
-                            </p>
-                        </div>
+                            <div class="w-full md:w-8/12 px-2">
+                                <label :for="group.id+index+'attributes'"><?= rex_i18n::msg('yform_flexible_content_field_attributes') ?></label>
+                                <input type="text"
+                                       class="form-control"
+                                       x-model="field.attributes"
+                                       :id="group.id+index+'attributes'"
+                                       :value="field.attributes"
+                                       @keyup="updateContent()"
+                                       @keydown.enter.prevent.stop="null"
+                                       @blur="updateContent()"
+                                       name="attributes">
+                                <p class="help-block small mb-0">
+                                    {"class":"class-1 class-2", "data-name": "name"}
+                                </p>
+                            </div>
 
-                        <div class="w-full md:w-4/12 px-2">
-                            <label class="control-label" :for="group.id+index+'width'"><?= rex_i18n::msg('yform_flexible_content_field_width') ?></label>
-                            <input type="number"
-                                   class="form-control"
-                                   :id="group.id+index+'width'"
-                                   max="100"
-                                   x-model="field.width"
-                                   @keyup="updateContent()"
-                                   @keydown.enter.prevent.stop="null"
-                                   @blur="updateContent()"
-                                   name="width">
+                            <div class="w-full md:w-4/12 px-2">
+                                <label class="control-label" :for="group.id+index+'width'"><?= rex_i18n::msg('yform_flexible_content_field_width') ?></label>
+                                <input type="number"
+                                       class="form-control"
+                                       :id="group.id+index+'width'"
+                                       max="100"
+                                       x-model="field.width"
+                                       @keyup="updateContent()"
+                                       @keydown.enter.prevent.stop="null"
+                                       @blur="updateContent()"
+                                       name="width">
+                            </div>
                         </div>
-                    </div>
+                    </template>
 
                     <!-- notice -->
                     <div class="flex -mx-2 mt-4">
