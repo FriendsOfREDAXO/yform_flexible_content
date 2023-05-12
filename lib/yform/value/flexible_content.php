@@ -74,6 +74,7 @@ class rex_yform_value_flexible_content extends rex_yform_value_abstract
                 'start' => ['type' => 'html', 'html' => '<div id="flexible-content" x-data="flexibleContent" x-on:rexready.document="ready">'],
 
                 'flexible_fields' => ['type' => 'textarea', 'attributes' => ['class' => 'flexible-content-definition form-control hidden']],
+                'button_name' => ['type' => 'text', 'label' => rex_i18n::msg('yform_flexible_content_group_button_label'), 'default' => rex_i18n::msg('yform_flexible_content_group_button'), 'placeholder' => rex_i18n::msg('yform_flexible_content_group_button')],
 
                 'content_definition' => ['type' => 'html', 'html' => $content, 'label' => rex_i18n::msg('yform_values_textarea_default')],
                 'notice' => ['type' => 'text', 'label' => rex_i18n::msg('yform_values_defaults_notice')],

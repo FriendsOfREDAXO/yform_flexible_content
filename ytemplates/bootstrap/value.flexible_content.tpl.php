@@ -9,6 +9,7 @@ $flexibleFields = $this->getElement('flexible_fields');
 
 if ($flexibleFields && '[]' !== $flexibleFields) {
     $content = new rex_fragment();
+    $content->setVar('button_text', $this->getElement('button_name') ?: rex_i18n::msg('yform_flexible_content_add_group'), false);
     $content->setVar('fields', $flexibleFields, false);
     $content->setVar('contentId', $this->getFieldId());
     echo $content->parse('yform_flexible_content/output/content.php');

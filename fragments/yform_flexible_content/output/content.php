@@ -4,6 +4,7 @@ $contentId = $this->getVar('contentId');
 $strippedFields = FlexibleContentUtils::stripFields($fields);
 
 $addGroup = new rex_fragment();
+$addGroup->setVar('button_text', $this->getVar('button_text'));
 $addGroup = $addGroup->parse('yform_flexible_content/output/add-group.php');
 
 $group = new rex_fragment();
