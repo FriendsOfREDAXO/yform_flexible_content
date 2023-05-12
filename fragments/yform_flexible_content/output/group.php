@@ -11,13 +11,13 @@ $addGroup->setVar('between_groups', true);
 $addGroup = $addGroup->parse('yform_flexible_content/output/add-group.php');
 ?>
 
-<div class="my-5" x-cloak x-show="hasContent">
+<div x-cloak x-show="hasContent">
     <template x-for="(group, groupIndex) in groups" :key="group.groupId">
-        <div class="relative">
+        <div class="relative -mt-5">
 
             <?= $dropzone->parse('yform_flexible_content/output/dropzone.php'); ?>
 
-            <div class="absolute left-0 top-0 w-full flex items-center justify-center -translate-y-1/2 text-center group"
+            <div class="absolute left-0 top-0 w-full flex items-center justify-center -translate-y-[25%] text-center group"
                  x-data="{dragging: false}"
                  @startdragging.window="dragging = true"
                  @enddragging.window="dragging = false"
