@@ -3,19 +3,22 @@ $field = new rex_fragment();
 $field = $field->parse('yform_flexible_content/output/field.php');
 
 $dropzone = new rex_fragment();
-$dropzone = $dropzone->parse('yform_flexible_content/output/dropzone.php');
+$dropzone = $dropzone->setVar('last', false);
 ?>
 
 <div class="my-5" x-cloak x-show="hasContent">
     <template x-for="(group, groupIndex) in groups" :key="group.groupId">
         <div>
 
-            <?= $dropzone ?>
+            <?= $dropzone->parse('yform_flexible_content/output/dropzone.php'); ?>
 
             <div class="my-5 panel panel-edit transition-all flexible-group shadow-lg"
                  x-data="flexibleGroup($el)"
+                 @startdragging.window="otherDragging = true"
+                 @enddragging.window="otherDragging = false"
                  :class="{
-                    'opacity-50': dragging
+                    'opacity-50 pointer-events-none': dragging,
+                    'pointer-events-none': otherDragging,
                  }">
                 <header class="panel-heading px-5 py-2">
                     <div class="panel-title">
@@ -63,7 +66,10 @@ $dropzone = $dropzone->parse('yform_flexible_content/output/dropzone.php');
             </div>
 
             <template x-if="groupIndex === groups.length - 1">
-                <?= $dropzone ?>
+                <?php
+                    $dropzone = $dropzone->setVar('last', true);
+                    echo $dropzone->parse('yform_flexible_content/output/dropzone.php');
+                ?>
             </template>
         </div>
     </template>

@@ -43,7 +43,7 @@ window.flexibleOutput = (data) => {
       let group = this.getGroupDetailsById(id);
       return group ? group.name : '';
     },
-    getFieldDefinition(id, name) {
+    getFieldDefinition (id, name) {
       let group = this.getGroupDetailsById(id);
       return group.fields.find((fieldDefinition) => fieldDefinition.name === name);
     },
@@ -67,8 +67,8 @@ window.flexibleOutput = (data) => {
       this.$content.value = this.contentString;
     },
     move (from, to) {
-        this.groups.splice(to, 0, this.groups.splice(from, 1)[0]);
-        this.updateContent();
+      this.groups.splice(to, 0, this.groups.splice(from, 1)[0]);
+      this.updateContent();
     },
     moveUp (index) {
       if (index > 0) {

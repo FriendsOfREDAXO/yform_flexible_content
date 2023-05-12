@@ -1,6 +1,7 @@
 window.flexibleGroup = ($element) => {
   return {
     dragging: false,
+    otherDragging: false,
     dragTarget: null,
     $ghostElement: '',
     dragStart (event) {
@@ -14,46 +15,6 @@ window.flexibleGroup = ($element) => {
       event.dataTransfer.setDragImage(this.$ghostElement, 0, 0);
       event.dataTransfer.effectAllowed = 'move';
       event.dataTransfer.setData('text/plain', this.groupIndex);
-    },
-    dragOver (event) {
-      event.preventDefault();
-      event.stopPropagation();
-
-      if (this.isSame(event.dataTransfer.getData('text/plain'))) {
-        return;
-      }
-
-      event.dataTransfer.dropEffect = 'move';
-      $element.classList.add('scale-105');
-      return false;
-    },
-    dragEnter (event) {
-      if (this.isSame(event.dataTransfer.getData('text/plain'))) {
-        return;
-      }
-
-      this.dragTarget = event.target;
-      $element.classList.add('scale-105');
-    },
-    dragLeave (event) {
-      if (this.dragTarget === event.target) {
-        event.stopPropagation();
-        event.preventDefault();
-        $element.classList.remove('scale-105');
-      }
-    },
-    drop (event) {
-      event.stopPropagation();
-      $element.classList.remove('scale-105');
-      const index = event.dataTransfer.getData('text/plain');
-
-      if (this.isSame(index)) {
-        return;
-      }
-
-      this.move(parseInt(index), this.groupIndex);
-
-      return false;
     },
     dragEnd (event) {
       this.dragging = false;

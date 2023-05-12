@@ -1,11 +1,18 @@
-<div x-data="{dragging: false, over: false, hidden:false}"
+<?php
+    $isLast = $this->getVar('last');
+?>
+
+<div x-data="{dragging: false, over: false, hidden:false, currentIndex:groupIndex}"
      class="relative"
      :class="{
         'pointer-events-none': hidden,
      }"
      @startdragging.window="
      dragging = true;
-     $event.detail.groupIndex === groupIndex ? hidden = true : hidden = false"
+     <?php if (!$isLast): ?>
+     groupIndex > $event.detail.groupIndex ? currentIndex = groupIndex - 1 : currentIndex = groupIndex;
+     <?php endif; ?>
+     $event.detail.groupIndex === currentIndex ? hidden = true : hidden = false"
      @enddragging.window="
      dragging = false;
      over = false;
@@ -14,10 +21,10 @@
     <div @dragenter="over=true"
          @dragleave="over=false"
          @dragover.prevent.stop="$event.dataTransfer.dropEffect = 'move'"
-         @drop="console.log($event)"
+         @drop="move($event.dataTransfer.getData('text/plain'), currentIndex)"
          class="py-0.5"
          :class="{
-            'scale-y-[30]': dragging,
+            'scale-y-[50]': dragging,
             'cursor-pointer': dragging,
          }">
     </div>
