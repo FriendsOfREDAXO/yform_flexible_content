@@ -4,13 +4,30 @@ $field = $field->parse('yform_flexible_content/output/field.php');
 
 $dropzone = new rex_fragment();
 $dropzone = $dropzone->setVar('last', false);
+
+$addGroup = new rex_fragment();
+$addGroup->setVar('button_text', $this->getVar('button_text'));
+$addGroup->setVar('between_groups', true);
+$addGroup = $addGroup->parse('yform_flexible_content/output/add-group.php');
 ?>
 
 <div class="my-5" x-cloak x-show="hasContent">
     <template x-for="(group, groupIndex) in groups" :key="group.groupId">
-        <div>
+        <div class="relative">
 
             <?= $dropzone->parse('yform_flexible_content/output/dropzone.php'); ?>
+
+            <div class="absolute left-0 top-0 w-full flex items-center justify-center -translate-y-1/2 text-center group"
+                 x-data="{dragging: false}"
+                 @startdragging.window="dragging = true"
+                 @enddragging.window="dragging = false"
+                 :class="{
+                    'pointer-events-none hidden': dragging,
+                 }">
+                <div class="relative">
+                    <?= $addGroup ?>
+                </div>
+            </div>
 
             <div class="my-5 panel panel-edit transition-all flexible-group shadow-lg"
                  x-data="flexibleGroup($el)"

@@ -8,6 +8,7 @@ $addGroup->setVar('button_text', $this->getVar('button_text'));
 $addGroup = $addGroup->parse('yform_flexible_content/output/add-group.php');
 
 $group = new rex_fragment();
+$group->setVar('button_text', $this->getVar('button_text'));
 $group = $group->parse('yform_flexible_content/output/group.php');
 ?>
 

@@ -31,8 +31,15 @@ window.flexibleOutput = (data) => {
         return v.toString(16);
       });
     },
-    addGroup (group) {
+    addGroup (group, index) {
       group.groupId = this.uuid();
+
+      if(index !== null) {
+        this.groups.splice(index, 0, JSON.parse(JSON.stringify(group)));
+        this.updateContent();
+        return;
+      }
+
       this.groups.push(JSON.parse(JSON.stringify(group)));
       this.updateContent();
     },
