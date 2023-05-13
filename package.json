@@ -16,8 +16,6 @@
         "tailwindcss": "^3.2.6"
     },
     "dependencies": {
-        "@alpinejs/collapse": "^3.11.1",
-        "@imacrayon/alpine-ajax": "^0.0.22",
         "alpinejs": "^3.12.0"
     }
 }

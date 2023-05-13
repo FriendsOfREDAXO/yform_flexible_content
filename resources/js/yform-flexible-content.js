@@ -1,10 +1,6 @@
 import Alpine from 'alpinejs';
-// import collapse from '@alpinejs/collapse';
-// import ajax from '@imacrayon/alpine-ajax'
 
 window.Alpine = Alpine;
-// Alpine.plugin(collapse);
-// Alpine.plugin(ajax);
 
 import './utilities.js';
 import './value.js';
