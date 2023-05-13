@@ -16,3 +16,5 @@ yform_flexible_content_delete_field = Feld löschen
 yform_flexible_content_choices = Auswahlmöglichkeiten
 yform_flexible_content_show_choices_inline = Auswahlmöglichkeiten in einer Zeile anzeigen?
 yform_flexible_content_choices_hint = Gib jede Auswahlmöglichkeit in einer neuen Zeile ein.<br>Um mehr Kontrolle zu haben, kannst du sowohl einen Wert als auch einen Label angeben, z.B.: <code>value : Label</code> => <code>1 : Erste Auswahl</code>
+yform_flexible_content_confirm_delete_group = Guppe `##name##` wirklich löschen?
+yform_flexible_content_confirm_delete_field = Feld `##name##` [##type##] wirklich löschen?

@@ -109,10 +109,14 @@ window.flexibleContent = () => {
       });
     },
     removeGroup (index) {
+      if (!confirm(rex.yform_flexible_content.delete_group.replace('##name##', this.groups[index].name))) return;
+
       this.groups.splice(index, 1);
       this.updateContent();
     },
     removeField (group, fieldIndex) {
+      if (!confirm(rex.yform_flexible_content.delete_field.replace('##name##', group.fields[fieldIndex].title).replace('##type##', group.fields[fieldIndex].type))) return;
+
       group.fields.splice(fieldIndex, 1);
       this.updateContent();
     },
@@ -120,5 +124,19 @@ window.flexibleContent = () => {
       this.contentString = JSON.stringify(this.groups);
       this.$content.value = this.contentString;
     },
+    move (group, from, to) {
+      group.fields.splice(to, 0, group.fields.splice(from, 1)[0]);
+      this.updateContent();
+    },
+    moveUp (group, index) {
+      if (index > 0) {
+        this.move(group, index - 1, index);
+      }
+    },
+    moveDown (group, index) {
+      if (index < this.groups.length - 1) {
+        this.move(group, index + 1, index);
+      }
+    }
   };
 };

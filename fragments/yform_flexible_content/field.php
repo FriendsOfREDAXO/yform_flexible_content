@@ -7,9 +7,31 @@
                        :value="field.type"
                        name="type">
 
-                <header class="panel-heading px-5">
-                    <div class="panel-title">
-                        <?= rex_i18n::msg('yform_flexible_content_field_type') ?>: <strong x-text="field.label"></strong>
+                <header class="panel-heading px-5 py-2">
+                    <div class="panel-title flex form-group items-center justify-between">
+                        <div>
+                            <?= rex_i18n::msg('yform_flexible_content_field_type') ?>: <strong x-text="field.label"></strong>
+                        </div>
+
+                        <div class="pl-5 flex space-x-2">
+                            <button class="btn btn-default"
+                                    :disabled="index === 0"
+                                    title="<?= rex_i18n::msg('move_slice_up') ?>"
+                                    @click.prevent="moveUp(group, index)">
+                                <i class="fa fa-chevron-up"></i>
+                            </button>
+                            <button class="btn btn-default"
+                                    :disabled="index === group.fields.length - 1"
+                                    title="<?= rex_i18n::msg('move_slice_down') ?>"
+                                    @click.prevent="moveDown(group, index)">
+                                <i class="fa fa-chevron-down"></i>
+                            </button>
+                            <button class="btn btn-danger h-[36px]"
+                                    @click.prevent="removeField(group, index)"
+                                    title="<?= rex_i18n::msg('yform_flexible_content_delete_field') ?>">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
                     </div>
                 </header>
 
@@ -44,14 +66,6 @@
                                    @blur="updateContent()"
                                    placeholder="Field Title"
                                    name="title">
-                        </div>
-
-                        <div class="px-2 flex items-end justify-end">
-                            <button class="btn btn-danger h-[36px]"
-                                    @click.prevent="removeField(group, index)"
-                                    title="<?= rex_i18n::msg('yform_flexible_content_delete_field') ?>">
-                                <i class="fa fa-trash"></i>
-                            </button>
                         </div>
                     </div>
 

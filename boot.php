@@ -10,5 +10,9 @@ if (rex::isBackend() && rex::getUser()) {
         rex_view::addJsFile($addon->getAssetsUrl('yform-flexible-content.js'));
         //        rex_view::addJsFile('https://cdn.tailwindcss.com');
         rex_view::addCssFile($addon->getAssetsUrl('yform-flexible-content.css'));
+        rex_view::setJsProperty('yform_flexible_content', [
+            'delete_group' => rex_i18n::msg('yform_flexible_content_confirm_delete_group'),
+            'delete_field' => rex_i18n::msg('yform_flexible_content_confirm_delete_field'),
+        ]);
     }
 }

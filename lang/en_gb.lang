@@ -16,3 +16,5 @@ yform_flexible_content_delete_field = Delete field
 yform_flexible_content_choices = Choices
 yform_flexible_content_show_choices_inline = Show choices inline?
 yform_flexible_content_choices_hint = Enter each choice on a new line.<br>For more control, you may specify both a value and label like this: <code>value : Label</code> => <code>1 : First Choice</code>
+yform_flexible_content_confirm_delete_group = Delete group `##name##`?
+yform_flexible_content_confirm_delete_field = Delete field `##name##` [##type##]?

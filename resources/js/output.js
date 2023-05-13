@@ -73,7 +73,7 @@ window.flexibleOutput = (data) => {
     },
     removeGroup (index) {
       const groupName = this.getGroupName(this.groups[index].id);
-      if (!confirm('Gruppe "' + groupName + '" wirklich löschen?')) return;
+      if (!confirm(rex.yform_flexible_content.delete_group.replace('##name##', groupName))) return;
 
       this.groups.splice(index, 1);
       this.updateContent();
