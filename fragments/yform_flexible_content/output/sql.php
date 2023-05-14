@@ -14,4 +14,8 @@
                     x-text="choice.label"></option>
         </template>
     </select>
+    <div x-cloak x-show="message" class="mt-2 font-bold alert alert-danger mb-0 p-5">
+        <div x-text="message"></div>
+        <code x-text="field.query"></code>
+    </div>
 </div>
