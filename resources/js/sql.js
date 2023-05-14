@@ -5,7 +5,7 @@ window.flexibleSQL = () => {
     async init () {
       const query = new URLSearchParams({
         'rex-api-call': 'fc_sql',
-        'query': this.field.query,
+        'query': this.fieldDefinition.query,
       }).toString();
 
       const response = await fetch('/redaxo/index.php?' + query);
