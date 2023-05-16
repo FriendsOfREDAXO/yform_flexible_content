@@ -14,6 +14,9 @@ Die erstellten Gruppen können dann in YForm Datensätzen eingebunden werden.
 Inhalte werden als JSON gespeichert und können über ein Trait einfacher abgerufen werden.
 Das Trait entfernt unnötige Daten, die zum Speichern der Inhalte benötigt werden und gibt die Inhalte als Array zurück.
 
+![flexible-screen](https://github.com/eaCe/yform_flexible_content/assets/2708231/68682c09-bb4a-4cb5-b649-0dd45d311976)
+
+
 ## FlexibleContentTrait
 
 Das Trait kann in eigene YForm Model-Klassen eingebunden werden. 
