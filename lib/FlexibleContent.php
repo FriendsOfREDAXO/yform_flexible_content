@@ -2,9 +2,15 @@
 
 class FlexibleContent
 {
+    private mixed $type;
+    private mixed $name;
+    /**
+     * @var mixed|null
+     */
+    private mixed $value;
+
     public function __construct(array $field)
     {
-        $this->field = $field;
         $this->type = $field['type'];
         $this->name = $field['name'];
         $this->value = isset($field['value']) && '' !== $field['value'] ? $field['value'] : null;
@@ -14,7 +20,7 @@ class FlexibleContent
     private function setValue(): void
     {
         if (null !== $this->value && 'checkbox' === $this->type) {
-            $this->value = explode(',', $this->field['value']);
+            $this->value = explode(',', $this->value);
         }
     }
 
