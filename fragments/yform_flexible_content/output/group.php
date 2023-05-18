@@ -15,7 +15,7 @@ $addGroup = $addGroup->parse('yform_flexible_content/output/add-group.php');
     <template x-for="(group, groupIndex) in groups" :key="group.groupId">
         <div class="relative -mt-5">
 
-            <?= $dropzone->parse('yform_flexible_content/output/dropzone.php'); ?>
+            <?= $dropzone->parse('yform_flexible_content/output/dropzone.php') ?>
 
             <div class="absolute left-0 top-0 w-full flex items-center justify-center -translate-y-[25%] text-center group"
                  x-data="{dragging: false}"
@@ -87,8 +87,8 @@ $addGroup = $addGroup->parse('yform_flexible_content/output/add-group.php');
             <template x-if="groupIndex === groups.length - 1">
                 <?php
                     $dropzone = $dropzone->setVar('last', true);
-                    echo $dropzone->parse('yform_flexible_content/output/dropzone.php');
-                ?>
+echo $dropzone->parse('yform_flexible_content/output/dropzone.php');
+?>
             </template>
         </div>
     </template>

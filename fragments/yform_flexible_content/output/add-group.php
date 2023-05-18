@@ -7,7 +7,7 @@
                  }"
             <?php else: ?>
                 class="btn btn-primary"
-            <?php endif; ?>
+            <?php endif ?>
             data-toggle="dropdown">
         <i class="fa fa-plus" aria-hidden="true"></i> <?= $this->getVar('button_text') ?>
     </button>

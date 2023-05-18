@@ -4,9 +4,7 @@ class FlexibleContent
 {
     private mixed $type;
     private mixed $name;
-    /**
-     * @var mixed|null
-     */
+    /** @var mixed|null */
     private mixed $value;
 
     public function __construct(array $field)

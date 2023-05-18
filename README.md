@@ -33,3 +33,31 @@ class custom_yform_model_class extends \rex_yform_manager_dataset
 
 custom_yform_model_class::get(1)->getFlexibleContent('field_name');
 ```
+
+#### Iterator nutzen
+
+```php
+class custom_yform_model_class extends \rex_yform_manager_dataset
+{
+    use FlexibleContentTrait;
+    
+    // ...
+}
+
+$item = custom_yform_model_class::query()->findId(1);
+$groups = $item->getIterableFlexibleContent('field_name');
+
+while ($groups->hasNext()) {
+    $group = $groups->current();
+
+    while ($group->hasNext()) {
+        $field = $group->current();
+
+        dump($field);
+
+        $group->next();
+    }
+
+    $groups->next();
+}
+```

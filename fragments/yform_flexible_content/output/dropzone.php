@@ -1,5 +1,5 @@
 <?php
-    $isLast = $this->getVar('last');
+$isLast = $this->getVar('last');
 ?>
 
 <div x-data="{dragging: false, over: false, hidden:false, currentIndex:groupIndex}"
@@ -7,7 +7,7 @@
      class="relative top-2"
      <?php else: ?>
      class="relative -top-2"
-     <?php endif; ?>
+     <?php endif ?>
      :class="{
         'pointer-events-none': hidden,
      }"
@@ -15,7 +15,7 @@
      dragging = true;
      <?php if (!$isLast): ?>
      groupIndex > $event.detail.groupIndex ? currentIndex = groupIndex - 1 : currentIndex = groupIndex;
-     <?php endif; ?>
+     <?php endif ?>
      $event.detail.groupIndex === currentIndex ? hidden = true : hidden = false"
      @enddragging.window="
      dragging = false;

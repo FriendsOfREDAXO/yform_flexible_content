@@ -2,7 +2,7 @@
 
 trait FlexibleContentTrait
 {
-    public function getFlexibleContent(string $columnName): array
+    public function getFlexibleContent(string $columnName, bool $useIterator = false): array
     {
         $data = [];
         $contents = json_decode($this->getValue($columnName), true);
@@ -14,9 +14,18 @@ trait FlexibleContentTrait
                 $group[] = new FlexibleContent($field);
             }
 
-            $data[] = $group;
+            if ($useIterator) {
+                $data[] = new FlexibleContentIterator($group);
+            } else {
+                $data[] = $group;
+            }
         }
 
         return $data;
+    }
+
+    public function getIterableFlexibleContent(string $columnName): FlexibleContentIterator
+    {
+        return new FlexibleContentIterator($this->getFlexibleContent($columnName, true));
     }
 }
