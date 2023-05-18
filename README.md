@@ -55,7 +55,7 @@ while ($groups->hasNext()) {
 
         dump($field);
 
-        $field->next();
+        $group->next();
     }
 
     $groups->next();
