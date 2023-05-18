@@ -24,7 +24,7 @@ class FlexibleContent
 
     public function getValue(): string|array|null
     {
-        if ('checkbox' === $this->type) {
+        if ('checkbox' === $this->type && !is_array($this->value)) {
             return explode(',', $this->value);
         }
 
