@@ -71,6 +71,15 @@ jobs:
           redaxo_cms/redaxo/bin/console package:install 'rexstan'
           redaxo_cms/redaxo/bin/console package:install '${{ github.event.repository.name }}'
 
+      # insert rexstan config
+      - name: Insert rexstan config
+        run: |
+          mysql -uroot -h127.0.0.1 -proot redaxo5 -e 'INSERT INTO rex_config ("namespace", "key", "value") VALUES ("rexstan", "addons", "\"|..\\..\\..\\..\\redaxo\\src\\addons\\blade\\|\"");'
+          mysql -uroot -h127.0.0.1 -proot redaxo5 -e 'INSERT INTO rex_config ("namespace", "key", "value") VALUES ("rexstan", "baseline", "null");'
+          mysql -uroot -h127.0.0.1 -proot redaxo5 -e 'INSERT INTO rex_config ("namespace", "key", "value") VALUES ("rexstan", "extensions", "\"|..\\..\\..\\..\\redaxo\\src\\addons\\rexstan\\config\\rex-superglobals.neon|..\\..\\..\\..\\redaxo\\src\\addons\\rexstan\\vendor\\phpstan\\phpstan\\conf\\bleedingEdge.neon|..\\..\\..\\..\\redaxo\\src\\addons\\rexstan\\vendor\\phpstan\\phpstan-strict-rules\\rules.neon|..\\..\\..\\..\\redaxo\\src\\addons\\rexstan\\vendor\\phpstan\\phpstan-deprecation-rules\\rules.neon|..\\..\\..\\..\\redaxo\\src\\addons\\rexstan\\config\\phpstan-phpunit.neon|..\\..\\..\\..\\redaxo\\src\\addons\\rexstan\\config\\phpstan-dba.neon|..\\..\\..\\..\\redaxo\\src\\addons\\rexstan\\config\\cognitive-complexity.neon|..\\..\\..\\..\\redaxo\\src\\addons\\rexstan\\config\\code-complexity.neon|..\\..\\..\\..\\redaxo\\src\\addons\\rexstan\\config\\dead-code.neon|\"");'
+          mysql -uroot -h127.0.0.1 -proot redaxo5 -e 'INSERT INTO rex_config ("namespace", "key", "value") VALUES ("rexstan", "level", "\"9\"");'
+          mysql -uroot -h127.0.0.1 -proot redaxo5 -e 'INSERT INTO rex_config ("namespace", "key", "value") VALUES ("rexstan", "phpversion", "\"80115\"");'
+
       # run rexstan
       - name: Run rexstan
         run: redaxo_cms/redaxo/bin/console rexstan:analyze
