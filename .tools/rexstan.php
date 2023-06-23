@@ -5,10 +5,10 @@ $REX['HTDOCS_PATH'] = '../../../../';
 $REX['BACKEND_FOLDER'] = 'redaxo';
 $REX['LOAD_PAGE'] = false;
 
-require __DIR__ . '../../../../core/boot.php';
-require __DIR__ . '../../../../core/packages.php';
 dump(realpath(__DIR__ . '../../../../core/'));
 dump(realpath(__DIR__ . '../../../../core/packages.php'));
+require __DIR__ . '../../../../core/boot.php';
+require __DIR__ . '../../../../core/packages.php';
 $extensions = [
     '../../../../redaxo/src/addons/rexstan/config/rex-superglobals.neon',
     '../../../../redaxo/src/addons/rexstan/vendor/phpstan/phpstan/conf/bleedingEdge.neon',
