@@ -70,10 +70,9 @@ jobs:
           redaxo_cms/redaxo/bin/console install:download 'rexstan' '1.0.118'
           redaxo_cms/redaxo/bin/console package:install 'rexstan'
           redaxo_cms/redaxo/bin/console package:install '${{ github.event.repository.name }}'
-          redaxo_cms/redaxo/bin/console package:install '${{ github.event.repository.name }}' -r
-          ls redaxo_cms/redaxo/data/addons/rexstan
-          cat redaxo_cms/redaxo/data/addons/rexstan/user-config.neon
-          cat redaxo_cms/redaxo/src/addons/rexstan/phpstan.neon
+
+      - name: Execute .tools/rexstan.php
+        run: php -f redaxo_cms/redaxo/src/addons/${{ github.event.repository.name }}/.tools/rexstan.php
 
       # run rexstan
       - name: Run rexstan
