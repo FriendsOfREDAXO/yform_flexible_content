@@ -70,6 +70,7 @@ jobs:
           redaxo_cms/redaxo/bin/console install:download 'rexstan' '1.0.118'
           redaxo_cms/redaxo/bin/console package:install 'rexstan'
           redaxo_cms/redaxo/bin/console package:install '${{ github.event.repository.name }}'
+          redaxo_cms/redaxo/bin/console package:install '${{ github.event.repository.name }}' -r
 
 
       # run rexstan
