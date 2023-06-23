@@ -73,6 +73,7 @@ jobs:
           redaxo_cms/redaxo/bin/console package:install '${{ github.event.repository.name }}' -r
           ls redaxo_cms/redaxo/data/addons/rexstan
           cat redaxo_cms/redaxo/data/addons/rexstan/user-config.neon
+          cat redaxo_cms/redaxo/src/addons/rexstan/phpstan.neon
 
       # run rexstan
       - name: Run rexstan
