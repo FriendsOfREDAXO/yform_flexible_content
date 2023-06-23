@@ -5,8 +5,8 @@ $REX['HTDOCS_PATH'] = '../../../../';
 $REX['BACKEND_FOLDER'] = 'redaxo';
 $REX['LOAD_PAGE'] = false;
 
-dump(realpath(__DIR__ . '../../../../core/'));
-dump(realpath(__DIR__ . '../../../../core/packages.php'));
+var_dump(realpath(__DIR__ . '../../../../core/'));
+var_dump(realpath(__DIR__ . '../../../../core/packages.php'));
 require __DIR__ . '../../../../core/boot.php';
 require __DIR__ . '../../../../core/packages.php';
 $extensions = [
