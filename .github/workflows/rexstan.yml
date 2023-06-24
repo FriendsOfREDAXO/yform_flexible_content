@@ -86,7 +86,7 @@ jobs:
 
       - name: test output2
         run: echo ${{ env.REXSTAN_RESULT }}
-        if: !env.REXSTAN_RESULT
+        if: env.REXSTAN_RESULT == ''
 
 #      - name: Fail if rexstan has output
 #        run: exit 1
