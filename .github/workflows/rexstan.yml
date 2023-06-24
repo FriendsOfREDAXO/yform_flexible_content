@@ -73,7 +73,7 @@ jobs:
 
       - name: Execute .tools/rexstan.php
         run: php -f redaxo_cms/redaxo/src/addons/${{ github.event.repository.name }}/.tools/rexstan.php
-        working-directory: ./appredaxo_cms/
+        working-directory: redaxo_cms
         
       # run rexstan
       - name: Run rexstan
