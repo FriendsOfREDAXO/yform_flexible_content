@@ -12,7 +12,7 @@ permissions:
 jobs:
   rexstan:
     env:
-      ADDON_KEY: ${{ github.event.repository.name }}'
+      ADDON_KEY: ${{ github.event.repository.name }}
 
     runs-on: ubuntu-latest
     permissions:
