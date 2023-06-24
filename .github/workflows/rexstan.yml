@@ -73,12 +73,12 @@ jobs:
 
       - id: rexstan
         name: Execute .tools/rexstan.php
-        run: php -f redaxo/src/addons/${{ github.event.repository.name }}/.tools/rexstan.php
+        run: echo "rexstan_result=$(php -f redaxo/src/addons/${{ github.event.repository.name }}/.tools/rexstan.php)" >> $GITHUB_OUTPUT
         working-directory: redaxo_cms
         
       - name: Fail if rexstan has output
         run: exit 1
-        if: steps.rexstan.outputs.exists
+        if: steps.rexstan.outputs.rexstan_result.length > 0
         
       # run rexstan
       - name: Run rexstan
