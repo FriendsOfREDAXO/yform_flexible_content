@@ -84,10 +84,6 @@ jobs:
           echo "rexstan_result=$(redaxo_cms/redaxo/bin/console rexstan:analyze)" >> "$GITHUB_ENV"
           echo "$EOF" >> "$GITHUB_ENV"
 
-      - name: test output2
+      - name: rexstan result
         run: echo ${{ env.REXSTAN_RESULT }}
-        if: env.REXSTAN_RESULT == ''
-
-#      - name: Fail if rexstan has output
-#        run: exit 1
-#        if: steps.rexstan.outputs.rexstan_result
+        if: env.REXSTAN_RESULT != ''
