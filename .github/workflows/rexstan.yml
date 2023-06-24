@@ -71,15 +71,15 @@ jobs:
           redaxo_cms/redaxo/bin/console package:install 'rexstan'
           redaxo_cms/redaxo/bin/console package:install '${{ github.event.repository.name }}'
 
-      - id: rexstan
-        name: Execute .tools/rexstan.php
-        run: echo "rexstan_result=$(php -f redaxo/src/addons/${{ github.event.repository.name }}/.tools/rexstan.php)" >> $GITHUB_OUTPUT
+      - name: Execute .tools/rexstan.php
+        run: php -f redaxo/src/addons/${{ github.event.repository.name }}/.tools/rexstan.php
         working-directory: redaxo_cms
         
+      # run rexstan
+      - id: rexstan
+        name: Run rexstan
+        run: echo "rexstan_result=$(redaxo_cms/redaxo/bin/console rexstan:analyze)" >> $GITHUB_OUTPUT
+
       - name: Fail if rexstan has output
         run: exit 1
         if: steps.rexstan.outputs.rexstan_result.length > 0
-        
-      # run rexstan
-      - name: Run rexstan
-        run: redaxo_cms/redaxo/bin/console rexstan:analyze
