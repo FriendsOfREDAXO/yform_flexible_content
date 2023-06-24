@@ -6,7 +6,7 @@ $REX['BACKEND_FOLDER'] = 'redaxo';
 $REX['LOAD_PAGE'] = false;
 
 var_dump(realpath('../../../../'));
-var_dump(realpath('../../../../core/packages.php'));
+var_dump(realpath('./'));
 require '../../../../core/boot.php';
 require '../../../../core/packages.php';
 $extensions = [
