@@ -78,8 +78,11 @@ jobs:
       # run rexstan
       - id: rexstan
         name: Run rexstan
-        run: echo "rexstan_result=$(redaxo_cms/redaxo/bin/console rexstan:analyze)" >> $GITHUB_OUTPUT
+        run: |
+          echo "REXSTAN_RESULT<<EOF" >> $GITHUB_ENV
+          echo "rexstan_result=$(redaxo_cms/redaxo/bin/console rexstan:analyze)" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
 
       - name: Fail if rexstan has output
         run: exit 1
-        if: steps.rexstan.outputs.rexstan_result.length > 0
+        if: env.REXSTAN_RESULT.length > 0
