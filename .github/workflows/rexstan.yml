@@ -88,7 +88,7 @@ jobs:
         run: echo ${{ env.REXSTAN_RESULT }} >> $GITHUB_STEP_SUMMARY
 
       - name: test output2
-        run: echo ${{ env.REXSTAN_RESULT }
+        run: echo ${{ env.REXSTAN_RESULT }}
 
 #      - name: Fail if rexstan has output
 #        run: exit 1
