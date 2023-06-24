@@ -19,6 +19,6 @@ $extensions = [
     '../../../../redaxo/src/addons/rexstan/config/code-complexity.neon',
     '../../../../redaxo/src/addons/rexstan/config/dead-code.neon'
 ];
-$addon = ['../../../../redaxo/src/addons/yform_flexible_content/'];
+$addon = ['../../../../redaxo/src/addons/' . getenv('ADDON_KEY') . '/'];
 
 \rexstan\RexStanUserConfig::save(9, $addon, $extensions, 80115);
