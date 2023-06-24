@@ -5,7 +5,7 @@ $REX['HTDOCS_PATH'] = '../../../../';
 $REX['BACKEND_FOLDER'] = 'redaxo';
 $REX['LOAD_PAGE'] = false;
 
-var_dump(realpath('../../../../core/'));
+var_dump(realpath('../../../../'));
 var_dump(realpath('../../../../core/packages.php'));
 require '../../../../core/boot.php';
 require '../../../../core/packages.php';
