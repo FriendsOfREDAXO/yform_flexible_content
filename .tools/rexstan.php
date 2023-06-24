@@ -5,9 +5,9 @@ $REX['HTDOCS_PATH'] = './';
 $REX['BACKEND_FOLDER'] = 'redaxo';
 $REX['LOAD_PAGE'] = false;
 
-var_dump(realpath('.'));
+var_dump(realpath('./'));
 var_dump(realpath('./redaxo/src/'));
-require 'core/boot.php';
+require './core/boot.php';
 require './redaxo/src/core/packages.php';
 $extensions = [
     '../../../../redaxo/src/addons/rexstan/config/rex-superglobals.neon',
