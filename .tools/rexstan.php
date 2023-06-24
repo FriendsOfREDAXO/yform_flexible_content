@@ -1,14 +1,14 @@
 <?php
 unset($REX);
 $REX['REDAXO'] = true;
-$REX['HTDOCS_PATH'] = '../../../../';
+$REX['HTDOCS_PATH'] = './';
 $REX['BACKEND_FOLDER'] = 'redaxo';
 $REX['LOAD_PAGE'] = false;
 
-var_dump(realpath('../../../../'));
-var_dump(realpath('./'));
-require '../../../../core/boot.php';
-require '../../../../core/packages.php';
+var_dump(realpath('.'));
+var_dump(realpath('./redaxo/src/'));
+require 'core/boot.php';
+require './redaxo/src/core/packages.php';
 $extensions = [
     '../../../../redaxo/src/addons/rexstan/config/rex-superglobals.neon',
     '../../../../redaxo/src/addons/rexstan/vendor/phpstan/phpstan/conf/bleedingEdge.neon',
