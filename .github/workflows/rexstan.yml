@@ -78,12 +78,4 @@ jobs:
       # run rexstan
       - id: rexstan
         name: Run rexstan
-        run: |
-          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-          echo "REXSTAN_RESULT<<$EOF" >> "$GITHUB_ENV"
-          echo "rexstan_result=$(redaxo_cms/redaxo/bin/console rexstan:analyze)" >> "$GITHUB_ENV"
-          echo "$EOF" >> "$GITHUB_ENV"
-
-      - name: rexstan result
-        run: echo ${{ env.REXSTAN_RESULT }}
-        if: env.REXSTAN_RESULT != ''
+        run: redaxo_cms/redaxo/bin/console rexstan:analyze
