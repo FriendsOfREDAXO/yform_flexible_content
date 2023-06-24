@@ -5,10 +5,9 @@ $REX['HTDOCS_PATH'] = './';
 $REX['BACKEND_FOLDER'] = 'redaxo';
 $REX['LOAD_PAGE'] = false;
 
-var_dump(realpath('./'));
-var_dump(realpath('./redaxo/src/'));
 require './redaxo/src/core/boot.php';
 require './redaxo/src/core/packages.php';
+
 $extensions = [
     '../../../../redaxo/src/addons/rexstan/config/rex-superglobals.neon',
     '../../../../redaxo/src/addons/rexstan/vendor/phpstan/phpstan/conf/bleedingEdge.neon',
