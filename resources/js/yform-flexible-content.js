@@ -14,7 +14,7 @@ import './textarea.js';
 import './sql.js';
 import './group.js';
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   Alpine.start();
 });
 

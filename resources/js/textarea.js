@@ -38,7 +38,7 @@ window.flexibleTextarea = ($textarea) => {
           'blur': (e) => {
             this.field.value = $textarea.value;
             this.updateContent();
-          }
+          },
         };
         const redactor = $R('#' + this.fieldId, options);
         return;
@@ -57,6 +57,6 @@ window.flexibleTextarea = ($textarea) => {
     ckEditorChanged(editor) {
       this.field.value = editor.getData();
       this.updateContent();
-    }
+    },
   };
 };

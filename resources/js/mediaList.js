@@ -47,6 +47,6 @@ window.flexibleMediaList = (id, field) => {
     moveMedia (direction) {
       moveREXMedialist(id, direction);
       this.updateValues();
-    }
+    },
   };
 };

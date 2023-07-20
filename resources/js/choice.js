@@ -29,6 +29,6 @@ window.flexibleChoice = () => {
       this.$watch('checkboxes', () => {
         this.field.value = this.checkboxes.join(',');
       });
-    }
+    },
   };
 };

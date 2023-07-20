@@ -30,6 +30,6 @@ window.flexibleGroup = ($element) => {
     },
     isSame (index) {
       return index == this.groupIndex;
-    }
+    },
   };
 };

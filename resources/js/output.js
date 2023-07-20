@@ -95,6 +95,6 @@ window.flexibleOutput = (data) => {
       if (index < this.groups.length - 1) {
         this.move(index + 1, index);
       }
-    }
+    },
   };
 };

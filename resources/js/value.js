@@ -92,7 +92,7 @@ window.flexibleContent = () => {
         {
           type: 'heading',
           label: 'Heading',
-        }
+        },
       ];
 
       types.forEach(type => {
@@ -137,6 +137,6 @@ window.flexibleContent = () => {
       if (index < this.groups.length - 1) {
         this.move(group, index + 1, index);
       }
-    }
+    },
   };
 };

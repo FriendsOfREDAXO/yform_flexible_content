@@ -53,6 +53,6 @@ window.flexibleLinkList = (id, field) => {
     moveLink (direction) {
       moveREXLinklist(id, direction);
       this.updateValues();
-    }
+    },
   };
 };
