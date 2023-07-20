@@ -30,4 +30,4 @@ jobs:
           yarn install
 
       - name: Run ESLint
-        run: npx eslint resources/**
+        run: npx eslint resources/js/**
