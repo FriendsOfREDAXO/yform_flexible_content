@@ -17,6 +17,20 @@ window.flexibleOutput = (data) => {
         this.hasContent = true;
         this.initialValue = JSON.parse(this.$content.value);
         this.groups = this.initialValue;
+
+        /**
+         * If the group definition has an identifier, but the group does not, set the identifier
+         * from the group definition.
+         */
+        this.groups.forEach((group) => {
+          if (group.identifier === undefined) {
+            const groupDefinition = this.groupDefinitions.find((groupDefinition) => groupDefinition.id === group.id);
+
+            if (groupDefinition && groupDefinition.identifier) {
+              group.identifier = groupDefinition.identifier;
+            }
+          }
+        });
       }
 
       this.$watch('contentString', (value) => {

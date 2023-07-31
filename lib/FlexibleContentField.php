@@ -1,11 +1,11 @@
 <?php
 
-class FlexibleContent
+class FlexibleContentField
 {
-    private mixed $type;
-    private mixed $name;
+    public mixed $type;
+    public mixed $name;
     /** @var mixed|null */
-    private mixed $value;
+    public mixed $value;
 
     public function __construct(array $field)
     {
@@ -22,6 +22,10 @@ class FlexibleContent
         }
     }
 
+    /**
+     * Get the field value
+     * @return string|array|null the value of the field
+     */
     public function getValue(): string|array|null
     {
         if ('checkbox' === $this->type && !is_array($this->value)) {
@@ -31,8 +35,33 @@ class FlexibleContent
         return $this->value;
     }
 
+    /**
+     * Get the name of the field
+     * @return string the name of the field
+     */
     public function getName(): string
     {
         return $this->name;
+    }
+
+    /**
+     * Get the type of the field
+     * @return string the type of the field
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    /**
+     * get the field as an array
+     */
+    public function getArray(): array
+    {
+        return [
+            'type' => $this->type,
+            'name' => $this->name,
+            'value' => $this->value,
+        ];
     }
 }

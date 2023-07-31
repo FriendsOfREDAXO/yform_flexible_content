@@ -11,13 +11,13 @@ trait FlexibleContentTrait
             $group = [];
 
             foreach ($content['fields'] as $field) {
-                $group[] = new FlexibleContent($field);
+                $group[] = new FlexibleContentField($field);
             }
 
             if ($useIterator) {
-                $data[] = new FlexibleContentIterator($group);
+                $data[] = new FlexibleContentIterator($group, $content);
             } else {
-                $data[] = $group;
+                $data[] = new FlexibleContentGroup($group, $content['identifier'] ?? '');
             }
         }
 
