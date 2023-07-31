@@ -36,6 +36,7 @@ window.flexibleContent = () => {
       this.groups.push({
         id: this.uuid(),
         name: '',
+        identifier: '',
         fields: [],
       });
       this.updateContent();
