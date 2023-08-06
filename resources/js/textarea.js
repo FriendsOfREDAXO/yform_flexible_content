@@ -12,6 +12,9 @@ window.flexibleTextarea = ($textarea) => {
       if ($textarea.classList.contains('cke5-editor')) {
         // need to pass a jQuery object to cke5_init... (╯°□°)╯︵ ┻━┻
         cke5_init($($textarea));
+
+        // set the theme if function exists
+        if (typeof cke5_set_theme === 'function') cke5_set_theme();
         return;
       }
 
