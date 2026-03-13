@@ -38,7 +38,7 @@
                 <div class="p-5">
 
                     <div class="flex -mx-2">
-                        <template x-if="field.type !== 'heading'">
+                        <template x-if="field.type">
                             <div class="flex-1 px-2">
                                 <label class="control-label" :for="group.id+index+'name'"><?= rex_i18n::msg('yform_flexible_content_field_name') ?></label>
                                 <input type="text"

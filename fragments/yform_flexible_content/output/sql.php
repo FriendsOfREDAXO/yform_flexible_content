@@ -1,4 +1,10 @@
-<div class="w-full" x-data="flexibleSQL">
+<div class="w-full" x-data="flexibleSQL" x-init="
+    if (fieldDefinition.attributes && fieldDefinition.attributes.multiple) {
+        if (!Array.isArray(field.value)) {
+            field.value = field.value ? [field.value] : [];
+        }
+    }
+">
     <label class="control-label" :for="fieldId" x-text="fieldDefinition.title"></label>
     <select class="form-control"
             name="content"
@@ -7,10 +13,14 @@
             x-model="field.value"
             :disabled="!choices.length"
             :id="fieldId">
-        <option value=""></option>
-        <template x-for="choice in choices" :key="index">
+        <template x-if="!(fieldDefinition.attributes && fieldDefinition.attributes.multiple)">
+            <option value=""></option>
+        </template>
+        <template x-for="choice in choices" :key="choice.value">
             <option :value="choice.value"
-                    :selected="choice.value == field.value"
+                    :selected="Array.isArray(field.value)
+                        ? field.value.map(String).includes(String(choice.value))
+                        : String(choice.value) === String(field.value)"
                     x-text="choice.label"></option>
         </template>
     </select>
